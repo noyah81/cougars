@@ -1,2 +1,2 @@
 # P5Cougars
-#Calvin Ni, Noya Hafiz, Megan Corrigan
+#Calvin Ni, Noya Hafiz, Megan Corrigan, Wenshi Bao
