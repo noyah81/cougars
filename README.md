@@ -6,11 +6,13 @@ Project Plan:
 
 
 Pairs consist of:
-1. Calvin Ni, Megan Corrigan, 
-2. Noya Hafiz, Wenshi Bao
+
+| Pair 1 Calvin Ni, Megan Corrigan  | Pair 2 Noya Hafiz, Wenshi Bao |
+| ------------- | ------------- |
+| Calvin Github User : statsprojectlol | Noya Github User:  |
+| Megan  Github User :  | Wenshi Github User  | 
 
 Backlog of Git
-https://github.com/noyah81/cougars/projects/1
 
 Team Responsibilities
 
