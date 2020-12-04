@@ -10,3 +10,5 @@ Backlog of Git
 
 Team Responsibilities
 
+
+Idea
