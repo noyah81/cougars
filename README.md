@@ -16,7 +16,7 @@
 
 ### Backlog of Git
 
-https://github.com/noyah81/cougars/projects/1
+(Project Plan) (https://github.com/noyah81/cougars/projects/1)
 
 This will be embedded given time.
 
