@@ -8,7 +8,7 @@
 | Pair 1 Calvin Ni, Megan Corrigan  | Pair 2 Noya Hafiz, Wenshi Bao |
 | ------------- | ------------- |
 | Calvin Github User : statsprojectlol | Noya Github User: noyah81  |
-| Megan  Github User :  | Wenshi Github User : | 
+| Megan  Github User : MeganCorrigan | Wenshi Github User : | 
 
 
 
