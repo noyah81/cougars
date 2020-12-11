@@ -16,9 +16,7 @@
 
 ### Backlog of Git
 
-[Project Board](https://github.com/noyah81/cougars/projects/1)
-
-This will be embedded given time.
+[Backlog](https://github.com/noyah81/cougars/projects/1)
 
 
 ### **Team Responsibilities**
