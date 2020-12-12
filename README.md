@@ -6,13 +6,32 @@
 
 ### Groups Table
 
-| Trio 1 Calvin Ni, Megan Corrigan, Noya Hafiz  | Pair 2 Noya Hafiz, Wenshi Bao |
+| Trio 1 Calvin Ni, Megan Corrigan, Noya Hafiz  | Solo Group Wenshi Bao |
 | ------------- | ------------- |
 | Calvin Github User : statsprojectlol | Wenshi Github User : |
 | Megan  Github User : MeganCorrigan |  | 
-| Noya Github User : | 
+| Noya Github User : noyah81| 
 
 
+###Assignments
+
+Noya :
+README
+Create website template to add data 
+
+Wenshi:
+
+
+Megan :
+Scrum board updates
+Updating assignments and completed tasks
+Embed link for backlog
+Pi stuff
+
+Calvin:
+Data scraping
+Implementing scraped data into a usable form for our goal
+Create API
 
 
 
@@ -21,5 +40,25 @@
 [Backlog](https://github.com/noyah81/cougars/projects/1)
 
 
-### **Team Responsibilities**
+### **College Board Requirements**
+
+
+####CB Big Idea #1 Creative Development:
+
+Work on a database where you can insert an input and get an output. For this group specifically, we are aiming to create a query that allows people in New York to get information on the subways. 
+
+####CB Big Idea #2 Data: 
+
+In order to get the data, we will use a New York subway database and filter out certain variables such as departure and ending locations to give to the user. 
+
+####CB Big Idea #3 Algorithms and Programming:
+ 
+Using HTML, CSS and JavaScript, an appealing website will be made. This will attract clients to want to come to our website and explore it a bit. Using what we learned last trimester, we will be able to apply that to our new website.
+
+####CB Big Idea #4 Computer Systems and Networks:
+Using a Raspberry Pi, this group will create a server to run the website, then use HTTP to allow for someone to request data.
+
+####CB Big Idea #5 Impact of Computing:
+
+Some impacts our project will have on society is knowledge on transportation, especially to those foreign on the use of subways. Travelers will be able to look up times and plan their trips. An impact on the locals is that it helps them plan for attending important events and jobs.
 
