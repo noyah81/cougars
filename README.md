@@ -49,7 +49,7 @@ Work on a database where you can insert an input and get an output. For this gro
 
 ####CB Big Idea #2 Data: 
 
-In order to get the data, we will use a New York subway database and filter out certain variables such as departure and ending locations to give to the user. 
+To get the data we need for this webapp, we will need to first get points of intrest in New York that can be reached through a subway. Then we will use a New York subway database to get variables such as departure and arrival times so that the user can reach the point of interest at given time. This allows for the user to plan out their day easier
 
 ####CB Big Idea #3 Algorithms and Programming:
  
