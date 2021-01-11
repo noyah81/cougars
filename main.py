@@ -10,5 +10,9 @@ def root():
 def madisonsquare():
     return render_template("madisonsquare.html")
 
+@app.route("/Wallstreetstation")
+def Wallstreetstation():
+    return render_template("Wallstreetstation.html")
+
 if __name__ == "__main__":
     app.run(debug=True, host='127.0.0.1',port='3000')
