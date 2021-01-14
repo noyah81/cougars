@@ -33,6 +33,9 @@ Data scraping
 Implementing scraped data into a usable form for our goal
 Create API
 
+Accomplishents:
+
+How to run: 
 
 
 ### Backlog of Git
