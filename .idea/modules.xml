@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cougars.iml" filepath="$PROJECT_DIR$/.idea/modules/cougars.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gunicorn/gunicorn.iml" filepath="$PROJECT_DIR$/gunicorn/gunicorn.iml" />
     </modules>
   </component>
 </project>
