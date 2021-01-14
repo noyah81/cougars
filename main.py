@@ -1,5 +1,4 @@
-from flask import Flask, render_template
-
+from flask import Flask, jsonify, render_template, request, g
 app = Flask(__name__)
 
 @app.route("/")
@@ -14,23 +13,39 @@ def madisonsquare():
 def Wallstreetstation():
     return render_template("Wallstreetstation.html")
 
+
+
+@app.route('/stop')
+def station():
+    try:
+        req = request.args.get('id', 0, type=str)
+        res = {'name': data[req]['name'], 'lat': data[req]['lat'], 'lon': data[req]['lon']}
+        response = jsonify(result=res)
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        return response
+    except KeyError:
+        response = jsonify(result='key not found')
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        return response
+
 # Given station, returns all info about that station
 @app.route('/api')
 def api():
     id = request.args.get('id', 0, type=str)
-    print 'request for id', id
+    print('request for id', id)
     try:
         res = data[id]
         response = jsonify(result=res)
         response.headers['Access-Control-Allow-Origin'] = '*'
         return response
     except KeyError:
-        print 'Invalid Key'
+        print ('Invalid Key')
         response = jsonify(result='key not found')
         response.headers['Access-Control-Allow-Origin'] = '*'
         return response
 
- Given time, returns all stations where train stops at that time
+
+#Given time, returns all stations where train stops at that time
 @app.route('/times')
 def times():
     if len(request.args) != 2:
@@ -64,19 +79,6 @@ def stations():
     response = jsonify(result=stations[1:])
     response.headers['Access-Control-Allow-Origin'] = '*'
     return response
-
-@app.route('/stop')
-def station():
-    try:
-        req = request.args.get('id', 0, type=str)
-        res = {'name': data[req]['name'], 'lat': data[req]['lat'], 'lon': data[req]['lon']}
-        response = jsonify(result=res)
-        response.headers['Access-Control-Allow-Origin'] = '*'
-        return response
-    except KeyError:
-        response = jsonify(result='key not found')
-        response.headers['Access-Control-Allow-Origin'] = '*'
-        return response
 
 if __name__ == "__main__":
     app.run(debug=True, host='127.0.0.1',port='3000')
