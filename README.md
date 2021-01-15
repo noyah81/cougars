@@ -49,14 +49,22 @@ Routes fixed
 -On each infromation page there is a picture of the site, a button linking to directions to the location, and a short description of the site
 
 ### About the code:
-#### empire.html, time.html, liberty.html, madisonsqaure.html, museum.html, statue.html: establish the informational pages
+-empire.html, time.html, liberty.html, madisonsqaure.html, museum.html, statue.html: establish the informational pages
+
    -bootstrap for Jumbotron photos centered 
+   
    -bootstrap for button linking to directions
+   
 -home.html: runs the main page ("welcome" page for users upon clicking link)
+
    -form for users (Bootstrao) to input emails and sites they visited
+   
 -base.html: established navigation bar
+
    -dropdown menu coded here for stations
+   
 -main.py: establishes routes
+
    -takes user to the page they want to access (html pages under "templates") from navigation bar 
 
 
