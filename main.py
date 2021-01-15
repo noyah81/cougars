@@ -7,6 +7,7 @@ app = Flask(__name__)
 def root():
     return render_template("base.html")
 
+
 @app.route("/home")
 def home():
     return render_template("home.html")
@@ -21,13 +22,10 @@ def madisonsquare():
 def liberty():
     return render_template("liberty.html")
 
+
 @app.route("/time")
 def time():
     return render_template("time.html")
-
-@app.route("/central")
-def central():
-    return render_template("central.html")
 
 
 @app.route("/museum")
