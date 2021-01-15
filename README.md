@@ -37,7 +37,7 @@ Group Accomplishents (Week of 1/11)
 Established nav bar
 Routes fixed
 
-How to run: 
+###How to run: 
 -Running through IntelliJ, click on link to website
 -The link takes the user to the home page where the site is introduced. 
 -Up top there is a nav where with interest points linked
