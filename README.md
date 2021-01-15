@@ -39,12 +39,17 @@ Routes fixed
 
 ### How to run: 
 -Running through IntelliJ, click on link to website
+
 -The link takes the user to the home page where the site is introduced. 
+
 -Up top there is a nav where with interest points linked
+
 -When the user clicks on the interest point they want, the website leads to a page with information on each of the interest points
+
 -On each infromation page there is a picture of the site, a button linking to directions to the location, and a short description of the site
-About the code:
--empire.html, time.html, liberty.html, madisonsqaure.html, museum.html, statue.html: establish the informational pages
+
+### About the code:
+#### empire.html, time.html, liberty.html, madisonsqaure.html, museum.html, statue.html: establish the informational pages
    -bootstrap for Jumbotron photos centered 
    -bootstrap for button linking to directions
 -home.html: runs the main page ("welcome" page for users upon clicking link)
