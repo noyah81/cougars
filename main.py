@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def root():
-    return render_template("base.html")
+    return render_template("home.html")
 
 
 @app.route("/home")
@@ -125,7 +125,7 @@ def stations():
         station = {'id': id, 'name': data[id]['name']}
         stations.append(station)
     response = jsonify(result=stations[1:])
-    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Origin'] = 'err*'
     return response
 
 
