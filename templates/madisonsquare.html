@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="media">
+    <a href="/joke">
+        <img src="{{ url_for('static', filename='battleship.jpeg')}}" width="64" height="64" class="mr-3">
+    </a>
+    <div class="media-body">
+        <h5 class="mt-0">Battleship</h5>
+        Play a computer science based battleship game!
+    </div>
+</div>
+
+{% endblock %}

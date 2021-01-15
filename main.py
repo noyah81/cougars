@@ -1,4 +1,6 @@
-from flask import Flask, jsonify, render_template, request, g
+from flask import Flask, jsonify, render_template, request
+import requests
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -13,7 +15,16 @@ def madisonsquare():
 def Wallstreetstation():
     return render_template("Wallstreetstation.html")
 
-
+# connects default URL to a function
+@app.route('/joke',  methods=['GET', 'POST'])
+def joke():
+    # call to random joke web api
+    url = 'https://official-joke-api.appspot.com/jokes/programming/random'
+    resp = requests.get(url)
+    # formatting variables from return
+    setup = resp.json()[0]['setup']
+    punchline = resp.json()[0]['punchline']
+    return render_template("joke.html", setup=setup, punchline=punchline)
 
 @app.route('/stop')
 def station():
