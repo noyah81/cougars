@@ -5,6 +5,22 @@
 ## [Project Plan](https://docs.google.com/document/d/12MikN6erqEzmTGDvZh2lsmTSRd4t44Dd1UiFS7VQ7ao/edit?usp=sharing)
 
 ## A. Completed Ticket & Scrumboard
+-Data Stuff: Calvin collected sample data that will be implemented on website through integration. This data will be extracted and used to provide information for the user on when it's extracted.
+
+-Flask Installation: Basic format of a website created for collaborative work. This was done by Megan and Noya. 
+
+-Interface Building: Planning on what the website will look like is apart of interface building. The interface was built by Noya. Calvin initally helped with establishing the routes.
+
+-nstall Gunicorn: Gunicorn is used to run python; it stores files. This was installed and implented within our project. Calvin installed Gunicorn. 
+
+-Templating: Templating includes files under the "templates" folder. Within this folder is multiple html files with code from pages that were initally made as static webpages for each interest point. This templates folders holds information on each interest point and contains the code for the navigation bar. Noya worked on templating. 
+
+-Install Jinja & Bootstrap: Bootstrap was implemented on to our website to make the interface more freindly. We added aspects of bootstrap within the code (used in home.html, madisonsquare.html...). This was done by Megan and Noya
+
+-In progress:
+  -Webpage Art: The styling of the webpage is not yet finished. We will continue to work on this in the future by adding login information, pictures on the home page, and links to stations tops under the dropdown. 
+
+-New York Bus Timetable and New York Subway Timetable: Calvin continues to find exact timings for transportation routes for different stations. He's still collecitng some data to add to our website that the user can search for the nearest station and the website can provide route information for each station. 
 
 ## B. Link to Code
 https://github.com/noyah81/cougars.git
