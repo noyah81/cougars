@@ -87,7 +87,7 @@ Noya :
 README
 Create website template to add data 
 
-Wenshi:
+Wenshi: looking for errors in code throughout project
 
 
 Megan :
