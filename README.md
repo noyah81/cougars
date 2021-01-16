@@ -7,6 +7,7 @@
 ## A. Completed Ticket & Scrumboard
 
 ## B. Link to Code
+https://github.com/noyah81/cougars.git
 
 ## C. Instruction on how to evaluate
 #### How to run: 
