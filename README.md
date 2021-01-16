@@ -103,7 +103,7 @@ Megan :
 Scrum board updates
 Updating assignments and completed tasks
 Embed link for backlog
-Pi stuff
+Deployment of website
 
 Calvin:
 Data scraping
