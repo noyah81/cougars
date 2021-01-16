@@ -30,7 +30,7 @@ https://github.com/noyah81/cougars.git
    
 -home.html: runs the main page ("welcome" page for users upon clicking link)
 
-   -form for users (Bootstrao) to input emails and sites they visited
+   -form for users (Bootstrap) to input emails and sites they visited
    
 -base.html: established navigation bar
 
