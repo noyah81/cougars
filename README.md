@@ -45,7 +45,15 @@ https://github.com/noyah81/cougars.git
 
 -Routes fixed
 
+-Sample Data acquired
+
 -Rasberry Pi set up
+
+### Things in Progress
+- API creation
+
+- Directory
+
 
 ### Groups Table
 
