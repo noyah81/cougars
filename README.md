@@ -4,7 +4,7 @@
 
 ## [Project Plan](https://docs.google.com/document/d/12MikN6erqEzmTGDvZh2lsmTSRd4t44Dd1UiFS7VQ7ao/edit?usp=sharing)
 
-## A. Completed Ticket & Scrumboard
+## A. Completed Tickets & Scrumboard
 -Data Stuff: Calvin collected sample data that will be implemented on website through integration. This data will be extracted and used to provide information for the user on when it's extracted.
 
 -Flask Installation: Basic format of a website created for collaborative work. This was done by Megan and Noya. 
