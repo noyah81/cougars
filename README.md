@@ -4,38 +4,14 @@
 
 ## [Project Plan](https://docs.google.com/document/d/12MikN6erqEzmTGDvZh2lsmTSRd4t44Dd1UiFS7VQ7ao/edit?usp=sharing)
 
-### Groups Table
-
-| Trio 1 Calvin Ni, Megan Corrigan, Noya Hafiz  | Solo Group Wenshi Bao |
-| ------------- | ------------- |
-| Calvin Github User : statsprojectlol | Wenshi Github User : |
-| Megan  Github User : MeganCorrigan |  | 
-| Noya Github User : noyah81| 
-
-
-### Assignments
-
-Noya :
-README
-Create website template to add data 
-
-Wenshi:
-
-
-Megan :
-Scrum board updates
-Updating assignments and completed tasks
-Embed link for backlog
-Pi stuff
-
-Calvin:
-Data scraping
-Implementing scraped data into a usable form for our goal
-Create API
-
-Group Accomplishents (Week of 1/11)
+### Group Accomplishents (Week of 1/11)
 Established nav bar
+
 Routes fixed
+
+Rasberry Pi set up
+
+
 
 ### How to run: 
 -Running through IntelliJ, click on link to website
@@ -66,6 +42,36 @@ Routes fixed
 -main.py: establishes routes
 
    -takes user to the page they want to access (html pages under "templates") from navigation bar 
+
+### Groups Table
+
+| Trio 1 Calvin Ni, Megan Corrigan, Noya Hafiz  | Solo Group Wenshi Bao |
+| ------------- | ------------- |
+| Calvin Github User : statsprojectlol | Wenshi Github User : |
+| Megan  Github User : MeganCorrigan |  | 
+| Noya Github User : noyah81| 
+
+
+### Assignments
+
+Noya :
+README
+Create website template to add data 
+
+Wenshi:
+
+
+Megan :
+Scrum board updates
+Updating assignments and completed tasks
+Embed link for backlog
+Pi stuff
+
+Calvin:
+Data scraping
+Implementing scraped data into a usable form for our goal
+Create API
+
 
 
 ### Backlog of Git
