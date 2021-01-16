@@ -4,6 +4,9 @@
 
 ## [Project Plan](https://docs.google.com/document/d/12MikN6erqEzmTGDvZh2lsmTSRd4t44Dd1UiFS7VQ7ao/edit?usp=sharing)
 
+# Scrum Master Grading
+20/20
+
 ## A. Completed Tickets & Scrumboard
 -Data Stuff: Calvin collected sample data that will be implemented on website through integration. This data will be extracted and used to provide information for the user on when it's extracted.
 
@@ -21,7 +24,9 @@
 
    -Webpage Art: The styling of the webpage is not yet finished. We will continue to work on this in the future by adding login information, pictures on the home page, and links to stations tops under the dropdown. 
 
-   -New York Bus Timetable and New York Subway Timetable: Calvin continues to find exact timings for transportation routes for different stations. He's still collecitng some data to add to our website that the user can search for the nearest station and the website can provide route information for each station. 
+   -New York Bus Timetable and New York Subway Timetable: Calvin continues to find exact timings for transportation routes for different stations. He's still collecitng some data to add to our website that the user can search for the nearest station and the website can provide route information for each station.
+   
+   -Deployment (just need public IP address).
 
 ## B. Link to Code
 https://github.com/noyah81/cougars.git
@@ -37,6 +42,10 @@ https://github.com/noyah81/cougars.git
 -When the user clicks on the interest point they want, the website leads to a page with information on each of the interest points
 
 -On each infromation page there is a picture of the site, a button linking to directions to the location, and a short description of the site
+
+## D. Deployment
+-In Progress
+-Currently only able to run on a local network. Once public IP is achieved, just need to switch out the IP address then it will be finsihed.
 
 #### About the code:
 -empire.html, time.html, liberty.html, madisonsqaure.html, museum.html, statue.html: establish the informational pages
@@ -129,4 +138,3 @@ Using a Raspberry Pi, this group will create a server to run the website, then u
 ####  CB Big Idea #5 Impact of Computing:
 
 Some impacts our project will have on society is knowledge on transportation, especially to those foreign on the use of subways. Travelers will be able to look up times and plan their trips. An impact on the locals is that it helps them plan for attending important events and jobs.
-
