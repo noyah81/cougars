@@ -13,7 +13,7 @@
 | Noya Github User : noyah81| 
 
 
-###Assignments
+### Assignments
 
 Noya :
 README
@@ -33,9 +33,39 @@ Data scraping
 Implementing scraped data into a usable form for our goal
 Create API
 
-Accomplishents:
+Group Accomplishents (Week of 1/11)
+Established nav bar
+Routes fixed
 
-How to run: 
+### How to run: 
+-Running through IntelliJ, click on link to website
+
+-The link takes the user to the home page where the site is introduced. 
+
+-Up top there is a nav where with interest points linked
+
+-When the user clicks on the interest point they want, the website leads to a page with information on each of the interest points
+
+-On each infromation page there is a picture of the site, a button linking to directions to the location, and a short description of the site
+
+### About the code:
+-empire.html, time.html, liberty.html, madisonsqaure.html, museum.html, statue.html: establish the informational pages
+
+   -bootstrap for Jumbotron photos centered 
+   
+   -bootstrap for button linking to directions
+   
+-home.html: runs the main page ("welcome" page for users upon clicking link)
+
+   -form for users (Bootstrao) to input emails and sites they visited
+   
+-base.html: established navigation bar
+
+   -dropdown menu coded here for stations
+   
+-main.py: establishes routes
+
+   -takes user to the page they want to access (html pages under "templates") from navigation bar 
 
 
 ### Backlog of Git
