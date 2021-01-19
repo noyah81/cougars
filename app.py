@@ -1,40 +1,49 @@
+# https://flask.palletsprojects.com/en/1.1.x/api/
+from flask import Flask, render_template, request, redirect, url_for
+from flask_bootstrap import Bootstrap
+from flask_sqlalchemy import SQLAlchemy
+from flask_wtf import FlaskForm
+from wtforms import StringField
+from wtforms.validators import InputRequired, Length
 
-from flask import Flask, jsonify, render_template, request, g
-
-
-stop_times = open("google_transit/stop_times.txt", "r+")
-stops_info = open("google_transit/stops.txt", "r+")
-
-
-# Create stops
-stops = {}
-for line in stops_info:
-    # print line
-    data = line.split(",")
-    id = data[0]
-    name = data[2]
-    lat = data[4]
-    lon = data[5]
-    stop = {'name' : name, 'lat': lat, 'lon': lon}
-    stops[id] = stop
-# print type(stops)
-
-# Create arrivals
-ids = []
-arrivals = {}
-for line in stop_times:
-    data = line.split(",")
-    time = data[1]
-    id = data[3]
-    if id not in ids:
-        ids.append(id)
-    arrivals.setdefault(id,[]).append(time)
-# print 'len(ids)', len(ids)
+import traintime
 
 
-data = {}
-for id in ids:
-    data[id] = {'name' : stops[id]['name'], 'lat': stops[id]['lat'], 'lon': stops[id]['lon'], 'arrivals': arrivals[id]}
+# create a Flask instance
+"Setting up the keys are needed for the database"
+app = Flask(__name__)
+app.config['SECRET_KEY'] = ':)'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///items.sqlite3'
+Bootstrap(app)
+db = SQLAlchemy(app)
+records = []
+
+"Initialize Database with specific Items"
+
+
+class items(db.Model):
+    id = db.Column('item_id', db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    type = db.Column(db.String(50))
+    price = db.Column(db.Float(200))
+
+
+def __init__(self, station, time, line):
+    self.name = station
+    self.id = time
+    self.type = line
+
+
+
+"Create Database"
+db.create_all()
+
+
+class ItemForm(FlaskForm):
+    name = StringField('station', validators=[InputRequired(), Length(min=1,max=15)])
+    type = StringField('type', validators=[InputRequired(), Length(min=1,max=80)])
+
 
 
 
