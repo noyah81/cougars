@@ -29,7 +29,7 @@ class items(db.Model):
     price = db.Column(db.Float(200))
 
 
-def __init__(self, station, time, line):
+def __init__(self, time, line):
     self.time = time
     self.line = line
 
@@ -40,8 +40,8 @@ db.create_all()
 
 
 class ItemForm(FlaskForm):
-    name = StringField('station', validators=[InputRequired(), Length(min=1,max=15)])
-    type = StringField('type', validators=[InputRequired(), Length(min=1,max=80)])
+    name = StringField('time', validators=[InputRequired(), Length(min=1,max=15)])
+    type = StringField('line', validators=[InputRequired(), Length(min=1,max=80)])
 
 
 
