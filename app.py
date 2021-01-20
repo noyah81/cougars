@@ -30,9 +30,8 @@ class items(db.Model):
 
 
 def __init__(self, station, time, line):
-    self.name = station
-    self.id = time
-    self.type = line
+    self.time = time
+    self.line = line
 
 
 
