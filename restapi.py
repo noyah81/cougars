@@ -4,12 +4,10 @@ from models.lessons import menus
 import requests
 
 # connects default URL to a function
-@restapi_bp.route('/')
-def index():
-    return render_template("restapi/index.html", menus=menus)
+
 
 @restapi_bp.route('/stations',  methods=['GET', 'POST'])
-def joke():
+def stations():
     # call to random joke web api
     url = 'mtaapi.herokuapp.com/stations'
     response = requests.get(url)
