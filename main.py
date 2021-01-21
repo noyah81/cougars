@@ -1,7 +1,47 @@
 from flask import Flask, render_template
+from flask import request
+import json
+import requests
+from datetime import datetime
+
 
 
 app = Flask(__name__)
+
+#API STUFF
+@app.route('/stations', methods=['GET', 'POST'])
+def stations():
+    url = 'http://mtaapi.herokuapp.com/stations' #the url for the stations list
+    resp = requests.get(url)
+    stations = resp.json()['result'] #list with dictionaries inside
+
+
+    stations =	sorted(stations, key = lambda d: d['name'])
+
+    return render_template('stations.html', stations = stations)
+
+
+@app.route('/traintime/<string:id>', methods=['GET', 'POST'])
+def traintime(id):
+    station = id
+    url = 'http://mtaapi.herokuapp.com/api?id='+station
+    resp = requests.get(url);
+    times = resp.json()['result']['arrivals']
+    times.sort()
+    unique_times = [ ]
+    now = datetime.now()
+    current_time = now.strftime("%H:$M:$S")
+    counter = 0;
+
+    for time in times:
+        if time not in unique_times and not (time[0]+time[1] == '24'):
+            if time >= current_time and counter <10:
+                unique_times.append(time)
+                counter+=1
+
+    times = unique_times
+    name = resp.json()['result']['name']
+    return render_template('traintime.html', times = times, name = name, current_time = current_time)
 
 
 @app.route("/")
@@ -51,5 +91,6 @@ def Wallstreetstation():
     return render_template("Wallstreetstation.html")
 
 
+#RUN
 if __name__ == "__main__":
-    app.run(debug=True, host='127.0.0.1', port='3000')
+    app.run(debug=True, host='127.0.0.1', port='5000')
