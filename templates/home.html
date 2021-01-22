@@ -2,9 +2,72 @@
 {% extends "base.html" %}
 
 {% block content %}
-<body background-color:  >
-</br>
-<h1 style="text-align:center;"> New York Attractions    </h1>
-<img src="https://calculushowto.com/wp-content/uploads/2018/10/cropped-calculus.png">
+<hr>
+<h1 style="text-align:center;"> New York Attractions </h1>
+<body style="background-color:#FCF3DE;">
+<div class="banner-info" align="center">
+<img src="https://imageproxy.themaven.net//https%3A%2F%2Fwww.history.com%2F.image%2FMTY1MTc1MTk3ODI0MDAxNjA5%2Ftopic-statue-of-liberty-gettyimages-960610006-promo.jpg" width="400" height="200" class="center">
+<img src="https://robbreport.com/wp-content/uploads/2019/06/central-park-tower-1.jpg?w=1001" width="400" height="200" class="center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Madison_Square_Garden_%28MSG%29_-_Full_%2848124330357%29.jpg/1200px-Madison_Square_Garden_%28MSG%29_-_Full_%2848124330357%29.jpg" width="400" height="200" class="center">
+</div>
+    <br>
+    <div class="banner-info" align="center">
+    <img src="https://www.greenroofs.com/wp-content/uploads/2018/09/wtc_liberty_park_living_wall8.jpg" width="400" height="200" class="center">
+    <img src="https://lh3.googleusercontent.com/oeElhcz08ou_KACQV0FTlEfPtkYEz-kBA57YDNvMG8Dg9fij2L09VsIhhytVa9eu" width="400" height="200" class="center">
+    <img src="https://www.nyhabitat.com/blog/wp-content/uploads/2013/01/Times-square-manhattan-new-york-nyc-crossroads-world.jpg" width="400" height="200" class="center">
+
+    </div>
+<style>
+  table, td, th {border: 1px solid black; border-collapse: collapse;}
+</style>
+<br>
+<h2 style="text-align:center;"> Comments </h2>
+<br>
+<div class="banner-info" align="center">
+    <span><label>Name </label></span>
+    <span><input id="inputName" type="text" class="text-center" required="" placeholder="Enter Name"></span>
+    <span><label>Location </label></span>
+    <span><input id="inputLocation" type="text" class="text-center" required="" placeholder="Tell us where you went!"></span>
+    <span><label>Comments </label></span>
+    <span><input id="inputComments" type="text" class="text-center" required="" placeholder="Comments"></span>
+</div>
+
+<div style="text-align:center">
+<div class="logo">
+    <input type="button"  onClick="insertData()" value="Submit" >
+</div>
+</div>
+<script language="javascript">
+    function insertData() {
+        var name = document.getElementById("inputName").value;
+        var address = document.getElementById("inputLocation").value;
+        var telephone = document.getElementById("inputComments").value;
+        document.getElementById("insertionPoint").innerHTML += "<tr><td>" + name + "</td><td>" + address + "</td><td>" + telephone + "</td></tr>";
+
+        // The below part is to clear the values after the entry is added.
+        document.getElementById("inputName").value = "";
+        document.getElementById("inputLocation").value = "";
+        document.getElementById("inputComments").value = "";
+    }
+</script>
+<div style="text-align:center">
+<table id="t1">
+    <caption>Customer Table</caption>
+    <colgroup>
+        <col span="2" class="c2">
+        <col>
+        <col class="c1">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Comments</th>
+    </tr>
+    </thead>
+    <tbody id="insertionPoint">
+
+    </tbody>
+</table>
 </body>
 {% endblock %}
