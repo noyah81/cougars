@@ -9,14 +9,13 @@
       </configuration>
     </facet>
     <facet type="Python" name="Python">
-      <configuration sdkName="Python 3.8 (introduction)" />
+      <configuration sdkName="" />
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../.." />
-    <orderEntry type="jdk" jdkName="Python 3.8 (introduction)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (untitled)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Python 3.8 (introduction) interpreter library" level="application" />
   </component>
 </module>
