@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> Train Times for {{name}} Station </h1>
+<div> Current Time is: {{current_time}}</div>
+
+{% for x in times %}
+
+
+<div>{{x}}</div>
+
+
+{% endfor %}
+
+<a href="/stations"> Back to Stations </a>
+
+{% endblock %}
