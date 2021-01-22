@@ -1,17 +1,44 @@
-{% block content %}
+
 <!DOCTYPE html>
 {% extends "base.html" %}
-
+{% block title %}Wall Street Station{% endblock %}
 {% block content %}
-
+<head>
+    <link href = "templates/central.css" rel="stylesheet" type="text/css" />
+</head>
 <div class="media">
 
-    <h1 style="text-align:center;"> Madison Square Garden </h1>
 
-    Central Park is a urban park. It is the most filmed location. It is a model for other urban parks in the world. Tourists can enjoy concerts and tours around the park.
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.
+
+    <p>Central Park is a urban park. It is the most filmed location. It is a model for other urban parks in the world. Tourists can enjoy concerts and tours around the park.</p>
+
 </div>
-{ url_for('static', filename='msq.jpeg')}}
-h5 class="mt-0" >Central Park /h5
+
+<div>
+    <table id="customers">
+        <tr>
+            <th>72nd</th>
+        </tr>
+        <tr>
+            <td><a href = "traintime/123S">72nd Lines 1 2 3 Southbound</a></td>
+        </tr>
+
+        <tr>
+            <td><a href = "traintime/123N">72nd Lines 1 2 3 Northbound</a></td>
+        </tr>
+
+        <tr>
+            <td><a href = "traintime/A22S">72nd A22 Southbound</a></td>
+        </tr>
+
+        <tr>
+            <td><a href = "traintime/A22N">72nd Lines A22 Northbound</a></td>
+        </tr>
+    </table>
+</div>
+
+
+
+
 
 {% endblock %}

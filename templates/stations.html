@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul class="list-group">
+
+    {% for station in stations %}
+
+
+    <li class="list-group-item"><a href="traintime/{{station.id}}"> {{station.name}}</a></li>
+
+    {% endfor %}
+
+</ul>
+
+{% endblock %}
