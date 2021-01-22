@@ -3,15 +3,19 @@
 
 {% block content %}
 
-<div class="media">
-    <a href="/joke">
-        <img src="{{ url_for('static', filename='msq.jpeg')}}" width="64" height="64" class="mr-3">
-    </a>
-    <div class="media-body">
-        <h5 class="mt-0" >Madison Square Gardens</h5>
-        Madison Square Garden is a indoor arena area. It is home to the New York Knicks. It is in Midtown Manhattan between 7th and 8th Avenue. It opened in 1968 as a sporting facility.
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.
+    <h1 style="text-align:center;"> Madison Square Garden </h1>
+    <body style="background-color:#FCF3DE;">
+    <div class="jumbotron">
+        <p style="text-align:center;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Madison_Square_Garden_%28MSG%29_-_Full_%2848124330357%29.jpg/1200px-Madison_Square_Garden_%28MSG%29_-_Full_%2848124330357%29.jpg" width="600" height="300" class="center">
+        <center>
+        Madison Square Garden is a multipurpose stadium. It is used for hockey, boxing, concerts, and other events. It is an indoor arena.
+    </center>
+        <br>
+    <p style="text-align:center;">
+        <a class="btn btn-primary" href="ttps://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F460180771%2F960x0.jpg%3Ffit%3Dscale" role="button">Take me there!</a>
+    </p>
     </div>
-</div>
+</body>
 
 {% endblock %}
