@@ -4,8 +4,8 @@
 
 ## [Project Plan](https://docs.google.com/document/d/12MikN6erqEzmTGDvZh2lsmTSRd4t44Dd1UiFS7VQ7ao/edit?usp=sharing)
 
-# Scrum Master Grading chicken
-20/20 why 
+# Scrum Master Grading
+20/20
 
 ## A. Completed Tickets & Scrumboard
 -Data Stuff: Calvin collected sample data that will be implemented on website through integration. This data will be extracted and used to provide information for the user on when it's extracted.
