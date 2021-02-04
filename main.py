@@ -1,8 +1,8 @@
 from flask import Flask, render_template
 from flask import request
 import json
-
 from datetime import datetime
+import sqlite3
 
 
 
@@ -52,8 +52,22 @@ def traintime(id):
 @app.route("/home")
 def home():
     #home2 is for layout experimentation 
-    return render_template("home.html")
+    #connect(s)/creates
+    conn = sqlite3.connect('travelsite.db') #creates db if it does not exist
 
+    #create a cursor
+    cur = conn.cursor()
+
+    #comes out as a tupple
+    cur.execute("SELECT * from reviews")
+    items = cur.fetchall();
+    #do the execute
+    conn.commit()
+    #close the command
+    conn.close()
+
+
+    return render_template("home.html", items=items)
 
 @app.route("/madisonsquare")
 def madisonsquare():

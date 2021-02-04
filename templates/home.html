@@ -43,38 +43,19 @@ Welcome to the Cougars Travel Website!
 
 </div>
 </div>
-<script language="javascript">
-    function insertData() {
-        var name = document.getElementById("inputName").value;
-        var address = document.getElementById("inputLocation").value;
-        var telephone = document.getElementById("inputComments").value;
-        document.getElementById("insertionPoint").innerHTML += "<tr><td>" + name + "</td><td>" + address + "</td><td>" + telephone + "</td></tr>";
+<hr>
+{% for item in items %}
 
-        document.getElementById("inputName").value = "";
-        document.getElementById("inputLocation").value = "";
-        document.getElementById("inputComments").value = "";
-    }
-</script>
-<br>
-<table class="center" id="t1">
+<div class="reviews">
+    <p>
+        <span class="name">{{ item[0] }}</span><br>
+        <span class="location">{{ item[1] }}</span><br>
+        {{ item[2] }}
+    </p>    
+</div>
 
-    <caption>Customer Table</caption>
-    <colgroup>
-        <col span="2" class="c2">
-        <col>
-        <col class="c1">
-    </colgroup>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Comments</th>
-    </tr>
-    </thead>
-    <tbody id="insertionPoint">
+{% endfor %}
 
-    </tbody>
-</table>
 </body>
 
 <footer>
