@@ -3,7 +3,7 @@
 
 
 ## [Project Plan](https://docs.google.com/document/d/12MikN6erqEzmTGDvZh2lsmTSRd4t44Dd1UiFS7VQ7ao/edit?usp=sharing)
-## [Not really and easter egg](http://76.176.49.121/easter)
+## [Not really an easter egg](http://76.176.49.121/easter)
 ## [Easter egg on local server](http://127.0.01:5000/easter)
 # Scrum Master Grading
 20/20
