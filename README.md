@@ -3,7 +3,7 @@
 
 
 ## [Project Plan](https://docs.google.com/document/d/12MikN6erqEzmTGDvZh2lsmTSRd4t44Dd1UiFS7VQ7ao/edit?usp=sharing)
-
+## [Not really and easter egg](/easter)
 # Scrum Master Grading
 20/20
 
