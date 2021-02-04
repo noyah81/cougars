@@ -51,6 +51,7 @@ def traintime(id):
 @app.route("/")
 @app.route("/home")
 def home():
+    #home2 is for layout experimentation 
     return render_template("home.html")
 
 

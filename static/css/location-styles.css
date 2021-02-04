@@ -1,0 +1,23 @@
+/*
+location-styles.css
+this CSS stylesheet is meant primarily for location.html but could be used elsewhere in the site
+*/
+
+/*global styles under 480px*/
+.banner-info img.center{
+	width: 100%;
+/*	max-width: 400px;
+	max-height: 200px;*/
+}
+
+@media only screen and (min-width: 480px) {
+	.banner-info img.center{
+		width: 50%;
+	}
+} /*do not lose this bracket: end 480+ styles*/
+
+@media only screen and (min-width: 873px) {
+	.banner-info img.center{
+		width: 33%;
+	}
+} /*do not lose this bracket: end 800+ styles*/
