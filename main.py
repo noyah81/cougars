@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask import request
 import json
-import requests
+
 from datetime import datetime
 
 
