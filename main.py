@@ -43,11 +43,12 @@ def traintime(id):
     name = resp.json()['result']['name']
     return render_template('traintime.html', times = times, name = name, current_time = current_time)
 
+#removed this code so that both the root and the home show the same info as that is what is expected. base.html has nothing inside it so there's just a blank page.
+# def root():
+#     return render_template("base.html")
+
 
 @app.route("/")
-def root():
-    return render_template("base.html")
-
 @app.route("/home")
 def home():
     return render_template("home.html")
