@@ -113,7 +113,14 @@ def wallstreetstation():
 def easter():
     return render_template("easter.html")
 
+@app.route("/iam")
+def iam():
+    return render_template("iam.html")
 
+
+@app.route("/ticket1")
+def ticket1():
+    return render_template("ticket1.html")
 # RUNv
 if __name__ == "__main__":
     app.run(debug=True, host='127.0.0.1', port='5000')
