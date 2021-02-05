@@ -13,15 +13,15 @@
 #### [Easter Egg Link](http://76.176.49.121/easter)
 #### [Backlog Link](https://github.com/noyah81/cougars/projects/1)
 #Changes Log
-##Week 8 
+
+###Week 8 
 - linked the easter egg on README 
 - web server is able to be accessed remotely 
 - [Calvin's Ticket](https://github.com/noyah81/cougars/projects/1#card-53783399)
 - [Noya's Ticket](https://github.com/noyah81/cougars/projects/1#card-53858385)
 - [Megan's Ticket](https://github.com/noyah81/cougars/projects/1#card-53870933)
 
-##Week 4 Scrum Master Grading For 
-20/20
+
 
 ## A. Completed Tickets & Scrumboard
 -Data Stuff: Calvin collected sample data that will be implemented on website through integration. This data will be extracted and used to provide information for the user on when it's extracted.
