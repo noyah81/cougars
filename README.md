@@ -19,7 +19,7 @@
 - web server is able to be accessed remotely 
 - [Calvin's Tickets](https://github.com/noyah81/cougars/projects/1#card-53783399) 
 - [Calvin's other ticket](https://github.com/noyah81/cougars/projects/1#card-53719223)
-- [Noya's Ticket](https://github.com/noyah81/cougars/projects/1#card-53858385)
+- [Noya's Ticket](https://github.com/noyah81/cougars/projects/1#card-53719212)
 - [Megan's Ticket](https://github.com/noyah81/cougars/projects/1#card-53870933)
 
 
