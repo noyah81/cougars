@@ -29,6 +29,27 @@ Welcome to the Cougars Travel Website!
 <h2 style="text-align:center;"> Comments </h2>
 <br>
 <div class="banner-info" align="center">
+    <form action="" method="post">
+        <label for="input-name">Name: </label>
+        <input id="input name" type="text" name="name" required placeholder="Enter Name">
+        <label for="location"> Location: </label>
+        <input id="location" type="text" name="location" required placeholder="Enter Location">
+        <label for="comment">comment: </label>
+        <textarea id="comment" name="comment" placeholder="enter your comments about your experience here." required></textarea >
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+ <hr>
+{% for item in items %}
+
+<div class="reviews">
+<p>
+    <span class=name"> {{ item [0] }}</span><br>
+    <span class="location"> {{item [1]}} </span><br>
+    {{ item [2] }}
+    <p/>
+    </div>
+{% endfor %}
     <span><label>Name </label></span>
     <span><input id="inputName" type="text" class="text-center" required="" placeholder="Enter Name"></span>
     <span><label>Location </label></span>
