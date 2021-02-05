@@ -1,11 +1,26 @@
 # Welcome to the P5Cougars Repository
  
+### Groups Table
+
+| Trio 1 Calvin Ni, Megan Corrigan, Noya Hafiz  | Solo Group Wenshi Bao |
+| ------------- | ------------- |
+| Calvin Github User : statsprojectlol | Wenshi Github User : |
+| Megan  Github User : MeganCorrigan |  | 
+| Noya Github User : noyah81| 
 
 
-## [Project Plan](https://docs.google.com/document/d/12MikN6erqEzmTGDvZh2lsmTSRd4t44Dd1UiFS7VQ7ao/edit?usp=sharing)
-## [Not really an easter egg](http://76.176.49.121/easter)
-## [Easter egg on local server](http://127.0.01:5000/easter)
-# Scrum Master Grading
+#### [Project Plan Link](https://docs.google.com/document/d/12MikN6erqEzmTGDvZh2lsmTSRd4t44Dd1UiFS7VQ7ao/edit?usp=sharing)
+#### [Easter Egg Link](http://76.176.49.121/easter)
+#### [Backlog Link](https://github.com/noyah81/cougars/projects/1)
+#Changes Log
+##Week 8 
+- linked the easter egg on README 
+- web server is able to be accessed remotely 
+- [Calvin's Ticket](https://github.com/noyah81/cougars/projects/1#card-53783399)
+- [Noya's Ticket](https://github.com/noyah81/cougars/projects/1#card-53858385)
+- [Megan's Ticket](https://github.com/noyah81/cougars/projects/1#card-53870933)
+
+##Week 4 Scrum Master Grading For 
 20/20
 
 ## A. Completed Tickets & Scrumboard
@@ -82,13 +97,6 @@ https://github.com/noyah81/cougars.git
 - Directory
 
 
-### Groups Table
-
-| Trio 1 Calvin Ni, Megan Corrigan, Noya Hafiz  | Solo Group Wenshi Bao |
-| ------------- | ------------- |
-| Calvin Github User : statsprojectlol | Wenshi Github User : |
-| Megan  Github User : MeganCorrigan |  | 
-| Noya Github User : noyah81| 
 
 
 ### Assignments
