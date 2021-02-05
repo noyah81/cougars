@@ -1,7 +1,6 @@
 import sqlite3
 from datetime import datetime
-
-import request
+import requests # this needs to be here in order to get data from forms. And it is requests not request
 from flask import Flask, render_template
 from flask import request
 
@@ -58,13 +57,12 @@ def home():
         name = request.form['name']
         location = request.form['location']
         comment = request.form['comment']
-        print(name)
-        print(location)
-        print(comment)
-
+        # print(name)
+        # print(location)
+        # print(comment)
         cur.execute("INSERT INTO reviews VALUES (?,?,?)", (name, location, comment))
 
-        cur.execute("SELECT * from reviews")
+    cur.execute("SELECT * from reviews")
     items = cur.fetchall()
     conn.commit()
     conn.close()
