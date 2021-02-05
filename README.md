@@ -14,7 +14,7 @@
 #### [Backlog Link](https://github.com/noyah81/cougars/projects/1)
 #Changes Log
 
-###Week 8 
+Week 8 
 - linked the easter egg on README 
 - web server is able to be accessed remotely 
 - [Calvin's Tickets](https://github.com/noyah81/cougars/projects/1#card-53783399) 
