@@ -17,8 +17,8 @@
 Week 8 
 - linked the easter egg on README 
 - web server is able to be accessed remotely 
-- Calvin's Tickets[Ticket](https://github.com/noyah81/cougars/projects/1#card-53783399) 
--                 [Ticket](https://github.com/noyah81/cougars/projects/1#card-53719223)
+- Calvin's Tickets [Ticket 1](https://github.com/noyah81/cougars/projects/1#card-53783399) 
+-                  [Ticket 2](https://github.com/noyah81/cougars/projects/1#card-53719223)
 - Noya's Tickets[Ticket](https://github.com/noyah81/cougars/projects/1#card-53719212)
 - Megans Tickets[Ticket](https://github.com/noyah81/cougars/projects/1#card-53870814)
 
