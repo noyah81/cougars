@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% extends "easter.html" %}
+{% block title %}Tickets for Feb 5th{% endblock %}
+{% block content %}
+
+<head>
+    <style>
+        table{
+            font-family:arial,sans-serif;
+            border-collapse: collapse;
+            width:100%
+        }
+
+        td, th {
+            border:1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<h2>Everyone's Tickets </h2>
+<table>
+    <tr>
+        <th>Person</th>
+        <td>Responsibility</td>
+        <td>Link</td>
+    </tr>
+    <tr>
+        <th>Calvin Ni</th>
+        <td>Easter Egg</td>
+        <td><a href="https://github.com/noyah81/cougars/projects/1#card-53783399">Ticket link</a></td>
+    </tr>
+    <tr>
+        <th>Noya</th>
+        <td>Responsibility</td>
+        <td>Link</td>
+    </tr>
+    <tr>
+        <th>Megan</th>
+        <td>Responsibility</td>
+        <td>Link</td>
+    </tr>
+
+</table>
+
+{% endblock %}
