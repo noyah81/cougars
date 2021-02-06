@@ -28,6 +28,7 @@ Welcome to the Cougars Travel Website!
         <input id="location" type="text" name="location" required placeholder="Enter Location">
         <label for="comment">comment: </label>
         <textarea id="comment" name="comment" placeholder="enter your comments about your experience here." required></textarea >
+        <input type="hidden" name="did_submit" value="true">
         <input type="submit" value="Submit">
     </form>
 </div>
@@ -45,5 +46,13 @@ Welcome to the Cougars Travel Website!
 <footer>
    <a  class="button link" href="stations.html">See list of Subways >></a>
 </footer>
+<script>
+    //fixes the double post upon refresh. 
+
+if ( window.history.replaceState ) {
+    console.log('history replaceState...')
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
 </body>
 {% endblock %}
