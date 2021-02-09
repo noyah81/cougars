@@ -88,21 +88,6 @@ def home():
     conn.close()
     return render_template("home.html", items=items)
 
-@app.route("/location")
-@app.route("/location/<string:url>")
-def location(url=''): 
-#this makes it so that if there's no location, it still outputs something to the page
-    if url == '':
-        url = 'No Location.'
-
-    return render_template("location.html", url=url)
-
-@app.route('/dashboard')
-#@is_logged_in #decorator will come later
-def dashboard():
-
-    return render_template('dashboard.html')
-
 @app.route("/madisonsquare")
 def madisonsquare():
     return render_template("madisonsquare.html")
@@ -132,7 +117,6 @@ def museum():
 def statue():
     return render_template("statue.html")
 
-
 @app.route("/empire")
 def empire():
     return render_template("empire.html")
@@ -155,6 +139,35 @@ def iam():
 @app.route("/ticket1")
 def ticket1():
     return render_template("ticket1.html")
+
+@app.route("/location")
+@app.route("/location/<string:url>")
+def location(url=''): 
+#this makes it so that if there's no location, it still outputs something to the page
+    if url == '':
+        return render_template('no_loc.html')
+    else:
+        conn = sqlite3.connect('travelsite.db')
+        #create a cursor
+        cur = conn.cursor()
+        cur.execute("SELECT * from locations WHERE loc_url = (?)", (url,))
+        location = cur.fetchone();
+        #do the execute
+        conn.commit()
+        #close the connection
+        conn.close()
+
+
+
+    return render_template("location2.html", url=url, location=location)
+
+@app.route('/dashboard')
+#@is_logged_in #decorator will come later
+def dashboard():
+
+    return render_template('dashboard.html')
+
+
 # RUNv
 if __name__ == "__main__":
     app.run(debug=True, host='127.0.0.1', port='5000')
