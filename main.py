@@ -26,25 +26,46 @@ def traintime(id):
     resp = requests.get(url)
     times = resp.json()['result']['arrivals']
     times.sort()
-    unique_times = []
+    unique_times = [] #comparison list.
+    display_times = []#display list.
     now = datetime.now()
-    current_time = now.strftime("%H:$M:$S")
+    #$ is a typo. % instead gives us the right values -- let's not include the seconds.
+    current_time = now.strftime("%H:%M%S")
+    display_time = now.strftime("%I:%M %p")
     counter = 0
 
+    #updated formatting for times in list
     for time in times:
+        #format of time is: 03:45:00
+        time = time[0:5] #this takes it down to hour and minute, no more seconds.
+
         if time not in unique_times and not (time[0] + time[1] == '24'):
+           
             if time >= current_time and counter < 10:
-                unique_times.append(time)
+                unique_times.append(time) #keeps it so we can cleanly compare times
+
+                #let's separate hours from minutes to compare for am/pm
+                time = time.split(':')
+                h = time[0]
+                m = time[1]
+                merideim = 'AM'
+
+                if int(h) > 11: #casts as int so we can compare numbers easily
+                    merideim = 'PM'
+                    h = int(h)-12 #lets us subtract numbers easily
+
+                if h == 0:
+                    h = 12
+
+                if h < 10:
+                    h = f"0{h}" #keeps double integer for time display consistantcy. 
+                
+                ftime = f"{h}:{m} {merideim}"
+                display_times.append(ftime)
                 counter += 1
 
-    times = unique_times
     name = resp.json()['result']['name']
-    return render_template('traintime.html', times=times, name=name, current_time=current_time)
-
-
-# removed this code so that both the root and the home show the same info
-# def root():
-#     return render_template("base.html")
+    return render_template('traintime.html', times=display_times, name=name, current_time=display_time)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -57,9 +78,8 @@ def home():
         name = request.form['name']
         location = request.form['location']
         comment = request.form['comment']
-        # print(name)
-        # print(location)
-        # print(comment)
+
+        #sqlite language command:
         cur.execute("INSERT INTO reviews VALUES (?,?,?)", (name, location, comment))
 
     cur.execute("SELECT * from reviews")
@@ -68,6 +88,20 @@ def home():
     conn.close()
     return render_template("home.html", items=items)
 
+@app.route("/location")
+@app.route("/location/<string:url>")
+def location(url=''): 
+#this makes it so that if there's no location, it still outputs something to the page
+    if url == '':
+        url = 'No Location.'
+
+    return render_template("location.html", url=url)
+
+@app.route('/dashboard')
+#@is_logged_in #decorator will come later
+def dashboard():
+
+    return render_template('dashboard.html')
 
 @app.route("/madisonsquare")
 def madisonsquare():
