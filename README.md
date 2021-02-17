@@ -8,7 +8,11 @@
 | Megan  Github User : MeganCorrigan |  | 
 | Noya Github User : noyah81| 
 
+Week of 2/17
+# AP requirements
+## Crossover suggestions
 
+# Current tickets and code review
 #### [Project Plan Link](https://docs.google.com/document/d/12MikN6erqEzmTGDvZh2lsmTSRd4t44Dd1UiFS7VQ7ao/edit?usp=sharing)
 #### [Easter Egg Link](http://76.176.49.121/easter)
 #### [Backlog Link](https://github.com/noyah81/cougars/projects/1)
