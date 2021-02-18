@@ -7,48 +7,72 @@ Welcome to the Cougars Travel Website!
 
 <hr>
 <body style="background-color:#FCF3DE;">
-<h1 style="text-align:center;"> New York Attractions </h1>
+<h1 style="text-align:center;"> New York Attractions</h1>
 
-<div class="banner-info" align="center">
-    <img src="https://imageproxy.themaven.net//https%3A%2F%2Fwww.history.com%2F.image%2FMTY1MTc1MTk3ODI0MDAxNjA5%2Ftopic-statue-of-liberty-gettyimages-960610006-promo.jpg" width="400" height="200" class="center">
-    <img src="https://robbreport.com/wp-content/uploads/2019/06/central-park-tower-1.jpg?w=1001" width="400" height="200" class="center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Madison_Square_Garden_%28MSG%29_-_Full_%2848124330357%29.jpg/1200px-Madison_Square_Garden_%28MSG%29_-_Full_%2848124330357%29.jpg" width="400" height="200" class="center">
+<div class="banner-info">
+    <div class="image-container liberty-statue">
+        <img src="https://imageproxy.themaven.net//https%3A%2F%2Fwww.history.com%2F.image%2FMTY1MTc1MTk3ODI0MDAxNjA5%2Ftopic-statue-of-liberty-gettyimages-960610006-promo.jpg">
+    </div>
+    <div class="image-container empire">
+        <img src="https://robbreport.com/wp-content/uploads/2019/06/central-park-tower-1.jpg?w=1001">
+    </div>
+    <div class="image-container madison">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Madison_Square_Garden_%28MSG%29_-_Full_%2848124330357%29.jpg/1200px-Madison_Square_Garden_%28MSG%29_-_Full_%2848124330357%29.jpg">
+    </div>
+    <div class="image-container liberty-park">
+        <img src="https://www.greenroofs.com/wp-content/uploads/2018/09/wtc_liberty_park_living_wall8.jpg">
+    </div>
+    <div class="image-container museum">
+        <img src="https://lh3.googleusercontent.com/oeElhcz08ou_KACQV0FTlEfPtkYEz-kBA57YDNvMG8Dg9fij2L09VsIhhytVa9eu">
+    </div>
+    <div class="image-container times-square">    
+        <img src="https://www.nyhabitat.com/blog/wp-content/uploads/2013/01/Times-square-manhattan-new-york-nyc-crossroads-world.jpg">
+    </div>
 </div>
-<div class="banner-info" align="center">
-    <img src="https://www.greenroofs.com/wp-content/uploads/2018/09/wtc_liberty_park_living_wall8.jpg" width="400" height="200" class="center">
-    <img src="https://lh3.googleusercontent.com/oeElhcz08ou_KACQV0FTlEfPtkYEz-kBA57YDNvMG8Dg9fij2L09VsIhhytVa9eu" width="400" height="200" class="center">
-    <img src="https://www.nyhabitat.com/blog/wp-content/uploads/2013/01/Times-square-manhattan-new-york-nyc-crossroads-world.jpg" width="400" height="200" class="center">
-</div>
-<h2 style="text-align:center;"> Enter Your Comments</h2>
-<div class="banner-info" align="center">
+
+<h2 style="text-align:center;">Tell Us About Your Experience!</h2>
+<div>
     <form action="" method="post">
+        <div class="upper">
         <label for="input-name">Name: </label>
-        <input id="input name" type="text" name="name" required placeholder="Enter Name">
-        <label for="location"> Location: </label>
-        <input id="location" type="text" name="location" required placeholder="Enter Location">
-        <label for="comment">comment: </label>
+        <input id="input-name" type="text" name="name" required placeholder="Your Name">
+        <label for="location">Location: </label>
+        <select id="location" required name="location">
+            <option value="">Please Choose</option>
+            <option value="Statue of Liberty">Statue of Liberty</option>
+            <option value="Empire State Building">Empire State Building</option>
+            <option value="Madison Square Garden">Madison Square Garden</option>
+            <option value="Liberty Park">Liberty Park</option>
+            <option value="Museum of Art">Museum of Art</option>
+            <option value="Times Square">Times Square</option>
+        </select>
+    </div>
+    <div class="lower">
+        <label for="comment">Comment: </label>
         <textarea id="comment" name="comment" placeholder="enter your comments about your experience here." required></textarea >
         <input type="hidden" name="did_submit" value="true">
-        <input type="submit" value="Submit">
+     </div>   
+             <input type="submit" value="Submit">
     </form>
 </div>
  <hr>
-{% for item in items %}
+ <h3>See what others have to say!</h3>
+ <hr>
 <div class="reviews">
-<p>
-    <span class=name"> {{ item [0] }}</span><br>
-    <span class="location"> {{item [1]}} </span><br>
-    {{ item [2] }}
-    <p/>
-</div>
+{% for item in items %}
+    <div class="review">
+        <span class="name"> {{ item [0] }}</span><br>
+        <span class="location"> {{item [1]}} </span><br>
+        <span class="review-content">{{ item [2] }}</span>
+    </div>
 {% endfor %}
+</div>
 <hr>
 <footer>
    <a  class="button link" href="stations.html">See list of Subways >></a>
 </footer>
 <script>
-    //fixes the double post upon refresh. 
-
+//fixes the double post upon refresh. 
 if ( window.history.replaceState ) {
     console.log('history replaceState...')
   window.history.replaceState( null, null, window.location.href );

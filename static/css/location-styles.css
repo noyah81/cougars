@@ -3,21 +3,130 @@ location-styles.css
 this CSS stylesheet is meant primarily for location.html but could be used elsewhere in the site
 */
 
+
 /*global styles under 480px*/
-.banner-info img{
-	width: 100%;
-	max-width:400px;
-	max-height:200px;
+
+* {box-sizing:border-box;} 
+
+form{
+	width: 90%;
+	margin: 1rem auto;
 }
 
+label, input, textarea, select{
+	display: block;
+	width: 90%;
+	margin: 5px auto 0;
+	font-size: 1.3em;
+	padding: .5em
+
+}
+
+input:focus, select:focus, textarea:focus{
+	border: solid 1px rgb(66 165 245);
+	outline-color: rgb(66 165 245)
+
+}
+
+label{
+	font-weight: bold;
+}
+
+textarea{
+	height:300px;
+
+}
+
+input[type="submit"] {
+    background-color: rgb(66 165 245);
+    color: white;
+    border: solid 1px rgb(66 165 245);
+    width: 94%;
+    margin: .5em auto;
+}
+
+
+.banner-info{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: minmax(0, 1fr);
+	grid-column-gap: 3%;
+	grid-row-gap: 1rem; 
+	min-width:0;
+	min-height: 0;
+	width: 90%;
+	margin: 1em auto;
+	
+}
+
+.banner-info .image-container img{
+	width: 100%;
+	height: auto;
+}
+
+
+.reviews{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(0, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem; 
+    text-align:left;
+    min-width:0;
+	min-height: 0;
+	width:90%;
+	margin: 1rem auto;
+}
+
+.review{
+	border-left: solid deepskyblue 5px;
+    padding: 0 .4em 0;
+
+}
+
+
+h3{
+	text-align: center;
+}
+
+
 @media only screen and (min-width: 480px) {
-	.banner-info img{
-		width: 50%;
+	.banner-info{
+		grid-template-columns: 1fr 1fr;
+	}	
+
+   .reviews{
+        grid-template-columns: 1fr 1fr 1fr;
+    }   
+
+    .upper, .lower {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 	}
+
 } /*do not lose this bracket: end 480+ styles*/
 
-@media only screen and (min-width: 873px) {
-	.banner-info img{
-		width: 33%;
+@media only screen and (min-width: 800px) {
+
+	.banner-info{
+		grid-template-columns: 1fr 1fr 1fr;
 	}
+ 	.reviews{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}	
 } /*do not lose this bracket: end 800+ styles*/
+
+
+/*
+ghost CSS: uncomment below for testing
+This is an excellent way to see what elements are pushing out others 
+and creating a horrible side scroll.
+*/
+
+/* 
+*{
+	background-color: black;
+	border: 1px solid red;
+	color: green;
+}
+*/

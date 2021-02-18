@@ -71,7 +71,7 @@ def traintime(id):
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/home', methods=['GET', 'POST'])
 def home():
-    # home2 is for layout experimentation
+    # home3 is for layout experimentation
     conn = sqlite3.connect('travelsite.db')
     cur = conn.cursor()
     if request.method == 'POST':
