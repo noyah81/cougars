@@ -8,9 +8,8 @@ Welcome to the Cougars Travel Website!
 <!-- moved the hr element into the body so that it is in the proper place. All elements that are typically visible should be contained within the body tag. -->
 
 <body style="background-color:#FCF3DE;">
-<hr>
 <h1 style="text-align:center;"> New York Attractions </h1>
-<div class="banner-info">
+<div class="main-banner">
     <div class="image-container liberty-statue">
         <img src="{{url_for('static', filename='images/NewYork-StatueOfLiberty.jpg')}}">
     </div>
@@ -30,30 +29,43 @@ Welcome to the Cougars Travel Website!
         <img src="{{url_for('static', filename='images/NewYork-TimesSquare.jpg')}}">
     </div>
 </div>
-<h2 style="text-align:center;"> Enter Your Comments</h2>
-<div class="banner-info" align="center">
-    <form action="" method="post">
+<h2> Enter Your Comments</h2>
+<div class="enter-comments">
+    <form action="#comments" method="post">
+        <div class="upper">
         <label for="input-name">Name: </label>
         <input id="input name" type="text" name="name" required placeholder="Enter Name">
         <label for="location"> Location: </label>
-        <input id="location" type="text" name="location" required placeholder="Enter Location">
-        <label for="comment">comment: </label>
+        <!-- keep the select dropdown for consistency in data -->
+        <select id="location" name="location" required>
+            <option value="">Please Choose</option>
+            <option value="Statue Of Liberty">Statue Of Liberty</option>
+            <option value="Empire State Buliding">Empire State Buliding</option>
+            <option value="Madison Square Garden">Madison Square Garden</option>
+            <option value="WTC Liberty Park">WTC Liberty Park</option>
+            <option value="Museum Of Art">Museum Of Art</option>
+            <option value="Times Square">Times Square</option>            
+        </select>
+        </div>
+        <div class="lower">
+        <label for="comment">Your Comment: </label>
         <textarea id="comment" name="comment" placeholder="enter your comments about your experience here." required></textarea >
         <input type="hidden" name="did_submit" value="true">
+        </div>
         <input type="submit" value="Submit">
     </form>
 </div>
- <hr>
-{% for item in items %}
+<h3 id="comments">Read What Others Have to Say:</h3>
 <div class="reviews">
-<p>
-    <span class=name"> {{ item [0] }}</span><br>
-    <span class="location"> {{item [1]}} </span><br>
-    {{ item [2] }}
-    <p/>
-</div>
+    <!-- make sure that the for loop only encloses the individual reviews -->
+{% for item in items %}
+    <div class="review">
+        <p class="name"> {{ item [0] }}</p>
+        <p class="location"> {{item [1]}} </p>
+        <p class="comments">{{ item [2] }}</p>
+    </div>
 {% endfor %}
-<hr>
+</div>
 <footer>
    <a  class="button link" href="stations.html">See list of Subways >></a>
 </footer>
