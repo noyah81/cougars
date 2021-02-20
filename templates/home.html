@@ -6,9 +6,11 @@ Welcome to the Cougars Travel Website!
 {% block content %}
 
 <!-- moved the hr element into the body so that it is in the proper place. All elements that are typically visible should be contained within the body tag. -->
-
+<!-- background-->
 <body style="background-color:#FCF3DE;">
+<!-- title-->
 <h1 style="text-align:center;"> New York Attractions </h1>
+<!-- images on home page--array of 6 photos-->
 <div class="main-banner">
     <div class="image-container liberty-statue">
         <img src="{{url_for('static', filename='images/NewYork-StatueOfLiberty.jpg')}}">
@@ -29,12 +31,15 @@ Welcome to the Cougars Travel Website!
         <img src="{{url_for('static', filename='images/NewYork-TimesSquare.jpg')}}">
     </div>
 </div>
+<!--CRUD code for comments--name, location, comments-->
 <h2> Enter Your Comments</h2>
 <div class="enter-comments">
     <form action="#comments" method="post">
         <div class="upper">
+            <!-- name input-->
         <label for="input-name">Name: </label>
         <input id="input name" type="text" name="name" required placeholder="Enter Name">
+            <!-- location input-->
         <label for="location"> Location: </label>
         <!-- keep the select dropdown for consistency in data -->
         <select id="location" name="location" required>
@@ -48,18 +53,21 @@ Welcome to the Cougars Travel Website!
         </select>
         </div>
         <div class="lower">
+            <!-- comment input-->
         <label for="comment">Your Comment: </label>
         <textarea id="comment" name="comment" placeholder="enter your comments about your experience here." required></textarea >
         <input type="hidden" name="did_submit" value="true">
         </div>
+        <!-- button -->
         <input type="submit" value="Submit">
     </form>
-</div>
+        </div>
 <h3 id="comments">Read What Others Have to Say:</h3>
 <div class="reviews">
     <!-- make sure that the for loop only encloses the individual reviews -->
 {% for item in items %}
     <div class="review">
+        <!-- list -->
         <p class="name"> {{ item [0] }}</p>
         <p class="location"> {{item [1]}} </p>
         <p class="comments">{{ item [2] }}</p>
