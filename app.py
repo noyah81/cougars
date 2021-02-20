@@ -26,6 +26,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # API STUFF
+#documentation and code found for api here: https://github.com/mimouncadosch/MTA-API
+#do NOT lose the URL above.
+
 @app.route('/stations', methods=['GET', 'POST'])
 def stations():
     url = 'http://mtaapi.herokuapp.com/stations'  # the url for the stations list
@@ -181,7 +184,31 @@ def location(url=''):
         conn.commit()
         conn.close()
 
-        station_list = location[6].split(',')
+        station_list = []
+
+        #api
+        stop_list = location[6].split(',') 
+        for stop in stop_list:
+            url = 'http://mtaapi.herokuapp.com/stop?id='+stop  # the url for the stations 
+            stop_char = stop[-1]
+            if stop_char == 'N':
+                stop_char = 'Northbound'
+            elif stop_char == 'S':
+                stop_char = 'Southbound'
+            elif stop_char == 'E':
+                stop_char = 'Eastbound'
+            elif stop_char == 'W':
+                stop_char = 'Westbound'
+                        
+            print(stop_char)
+            print(url)
+            resp = requests.get(url)
+            stop_data = resp.json()['result']
+            print(stop_data['name'])
+            stop_dict = {'name':stop_data['name'],'direction':stop_char, 'stop_id': stop, }
+            station_list.append(stop_dict)
+
+
 
     return render_template("location.html", url=url, title=title, image=location[3], body=location[4], gmapLink=location[5], stations=station_list, body_class='location', items=items)
 

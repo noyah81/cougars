@@ -23,7 +23,8 @@
 <div>
 {% for station in stations %}
     <div class="station-list">
-        <p><span class="name">{{station}}</p>
+    	<!-- need to find a way to query the name and add it in here -->
+        <p><span class="name"><a href="/traintime/{{station.stop_id}}"> {{station.name}} {{station.direction}} Stop {{station.stop_id}}</a></p>
     </div>
 {% endfor %}	
 </div>
