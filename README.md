@@ -10,8 +10,10 @@
 
 Week of 2/17
 # AP requirements
-## Crossover suggestions
-Team Candy suggested we organize our code so we have implemented more comments to distinguish parts of code. 
+## Crossover suggestions and implentation
+-Team Candy suggested we organize our code so we have implemented more comments to distinguish parts of code, especially to home.html: https://github.com/noyah81/cougars/blob/main/templates/home.html
+-Another suggestion made was to add a dropdown menu for the CRUD locations input so that the user can't enter whatever location they want. There is now a dropdown for all the locations featured on our website to limit the inputs: https://github.com/noyah81/cougars/blob/main/templates/home.html#L44
+
 
 # Current tickets and code review
 #### [Project Plan Link](https://docs.google.com/document/d/12MikN6erqEzmTGDvZh2lsmTSRd4t44Dd1UiFS7VQ7ao/edit?usp=sharing)
