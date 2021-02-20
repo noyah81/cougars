@@ -10,11 +10,24 @@
 
 Week of 2/17
 # AP requirements
+-Inputs (form to insert name and comment) : https://github.com/noyah81/cougars/blob/main/templates/home.html#L40
+
+-Outputs (comments section) : https://github.com/noyah81/cougars/blob/main/templates/home.html#L70
+
+-Lists (nav bar): https://github.com/noyah81/cougars/blob/main/templates/base.html#L35n
+
+-Procedures (database): https://github.com/noyah81/cougars/blob/main/main.py#L72
+
+-Algorithms (if then statements) : https://github.com/noyah81/cougars/blob/main/main.py#L148
+
 ## Crossover suggestions and implentation
 -Team Candy suggested we organize our code so we have implemented more comments to distinguish parts of code, especially to home.html: https://github.com/noyah81/cougars/blob/main/templates/home.html
 
 -Another suggestion made was to add a dropdown menu for the CRUD locations input so that the user can't enter whatever location they want. There is now a dropdown for all the locations featured on our website to limit the inputs: https://github.com/noyah81/cougars/blob/main/templates/home.html#L44
 
+-orgnanization of the home page images was fixed (previously, the pictures were different sizes): https://github.com/noyah81/cougars/blob/main/templates/home.html#L14
+
+-The inputs are only submitted and outputted once (previosly, the input would come out twice if the page was refreshed): https://github.com/noyah81/cougars/blob/main/templates/home.html#L83
 
 # Current tickets and code review
 #### [Project Plan Link](https://docs.google.com/document/d/12MikN6erqEzmTGDvZh2lsmTSRd4t44Dd1UiFS7VQ7ao/edit?usp=sharing)
