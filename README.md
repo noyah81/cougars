@@ -58,13 +58,15 @@ Week 8
 
 -Install Jinja & Bootstrap: Bootstrap was implemented on to our website to make the interface more freindly. We added aspects of bootstrap within the code (used in home.html, madisonsquare.html...). This was done by Megan and Noya
 
+-RPi: Worked on deploying the website, done by Megan
+
 -In progress:
 
    -Webpage Art: The styling of the webpage is not yet finished. We will continue to work on this in the future by adding login information, pictures on the home page, and links to stations tops under the dropdown. 
 
    -New York Bus Timetable and New York Subway Timetable: Calvin continues to find exact timings for transportation routes for different stations. He's still collecitng some data to add to our website that the user can search for the nearest station and the website can provide route information for each station.
    
-   -Deployment (just need public IP address).
+   -Website Name: Getting the website to have a name rather than just an IP address. Being worked on by Megan.
 
 ## B. Link to Code
 https://github.com/noyah81/cougars.git
