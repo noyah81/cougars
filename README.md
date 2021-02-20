@@ -11,6 +11,7 @@
 Week of 2/17
 # AP requirements
 ## Crossover suggestions
+Team Candy suggested we organize our code so we have implemented more comments to distinguish parts of code. 
 
 # Current tickets and code review
 #### [Project Plan Link](https://docs.google.com/document/d/12MikN6erqEzmTGDvZh2lsmTSRd4t44Dd1UiFS7VQ7ao/edit?usp=sharing)
