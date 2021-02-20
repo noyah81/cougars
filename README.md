@@ -9,7 +9,7 @@
 | Noya Github User : noyah81| 
 
 Week of 2/17
-# AP requirements
+# AP requirements in our code 
 -Inputs (form to insert name and comment) : https://github.com/noyah81/cougars/blob/main/templates/home.html#L40
 
 -Outputs (comments section) : https://github.com/noyah81/cougars/blob/main/templates/home.html#L70
