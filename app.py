@@ -158,26 +158,34 @@ def iam():
 def ticket1():
     return render_template("ticket1.html")
 
+
 @app.route("/location")
 @app.route("/location/<string:url>")
 def location(url=''): 
 #this makes it so that if there's no location, it still outputs something to the page
     if url == '':
+        #have it spit out locations.html which has all the locations on it and choose it.
         return render_template('no_loc.html')
     else:
         conn = sqlite3.connect('travelsite.db')
         #create a cursor
         cur = conn.cursor()
-        cur.execute("SELECT * from locations WHERE loc_url = (?)", (url,))
-        location = cur.fetchone();
-        #do the execute
+        cur.execute("SELECT * from locations WHERE url = (?)", (url,))
+        location = cur.fetchone()
         conn.commit()
-        #close the connection
+        
+        title=location[1]
+
+        cur.execute("SELECT * from reviews WHERE location = (?)", (title,))
+        items = cur.fetchall()
+        conn.commit()
         conn.close()
 
+        station_list = location[6].split(',')
+
+    return render_template("location.html", url=url, title=title, image=location[3], body=location[4], gmapLink=location[5], stations=station_list, body_class='location', items=items)
 
 
-    return render_template("location2.html", url=url, location=location)
 
 @app.route('/dashboard')
 #@is_logged_in #decorator will come later

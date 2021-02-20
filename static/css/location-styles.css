@@ -62,9 +62,10 @@ input[type="submit"] {
 	
 }
 
-.main-banner .image-container img{
+.main-banner .image-container img, .location img {
 	width: 100%;
 	height: auto;
+	max-width: 800px;
 }
 
 h1, h2, h3{
@@ -93,7 +94,13 @@ h1, h2, h3{
 
 }
 
+.center{
+	text-align: center;
+}
 
+.review span.name{
+	font-weight: bold;
+}
 @media only screen and (min-width: 480px) {
 	.main-banner{
 		grid-template-columns: 1fr 1fr;
