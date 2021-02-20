@@ -7,6 +7,7 @@ from flask import request
 import requests
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import desc
+from passlib.hash import sha256_crypt 
 
 app = Flask(__name__)
 
@@ -199,17 +200,17 @@ def location(url=''):
                 stop_char = 'Eastbound'
             elif stop_char == 'W':
                 stop_char = 'Westbound'
-                        
-            print(stop_char)
-            print(url)
+
             resp = requests.get(url)
             stop_data = resp.json()['result']
-            print(stop_data['name'])
             stop_dict = {'name':stop_data['name'],'direction':stop_char, 'stop_id': stop, }
             station_list.append(stop_dict)
 
-
-
+        #MUSIC drip queen @ KOREAN . drip > / 9 & BESTBUY ; drip rope USA
+        password = sha256_crypt.hash(str('Mdq@K.d>/9&B;drU'))
+        print('epw1: '+ password)
+        print('epw2: $5$rounds=535000$/0wmWmX4kqoDHXwy$A.c/zDWk39QbKpO7FGBr6FO89pe/80g58hESzebSht3')
+        
     return render_template("location.html", url=url, title=title, image=location[3], body=location[4], gmapLink=location[5], stations=station_list, body_class='location', items=items)
 
 
