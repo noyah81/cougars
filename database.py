@@ -1,11 +1,11 @@
 import sqlite3
 
 
-#query db and return all records
+# query db and return all records
 def show_all(table = 'reviews'):
-	#connect
+	# connect
 	conn = sqlite3.connect('customer.db') #creates db if it does not exist
-	#create a cursor
+	# create a cursor
 	cur = conn.cursor() 
 	
 	#comes out as a tupple

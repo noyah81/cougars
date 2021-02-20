@@ -6,7 +6,7 @@ Welcome to the Cougars Travel Website!
 {% block content %}
 
 <!-- moved the hr element into the body so that it is in the proper place. All elements that are typically visible should be contained within the body tag. -->
-
+<!-- images on home page--array of 6 photos-->
 <body style="background-color:#FCF3DE;">
 <h1 style="text-align:center;"> New York Attractions </h1>
 <div class="main-banner">
@@ -29,6 +29,7 @@ Welcome to the Cougars Travel Website!
         <img src="{{url_for('static', filename='images/NewYork-TimesSquare.jpg')}}">
     </div>
 </div>
+#CRUD code for comments--name, location, comments
 <h2> Enter Your Comments</h2>
 <div class="enter-comments">
     <form action="#comments" method="post">
@@ -54,7 +55,7 @@ Welcome to the Cougars Travel Website!
         </div>
         <input type="submit" value="Submit">
     </form>
-</div>
+        </div>
 <h3 id="comments">Read What Others Have to Say:</h3>
 <div class="reviews">
     <!-- make sure that the for loop only encloses the individual reviews -->
