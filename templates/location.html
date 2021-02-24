@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 {% extends "base.html" %}
 {% block title %}Location: {{title}} {% endblock %}
 {% block content %}
@@ -7,7 +6,7 @@
 <img src="{{url_for('static', filename='images/')}}{{image}}">
 {{body | safe}}
 <p style="text-align:center;">
-<a class="btn btn-primary" href="{{gmapLink}}" role="button">Take me there!</a>
+<a class="btn btn-primary" href="{{gmapLink}}" role="button" target="_blank" title="opens in a new tab">Take me there!</a>
 </p>
 </div>
 <h3>Comments on {{title}}</h3>
@@ -21,10 +20,16 @@
 </div>
 <h3>Stations Near You:</h3>
 <div>
+{% if isText %}
+	<p class="center">{{stations}}</p>
+{% else %}	
 {% for station in stations %}
-    <div class="station-list">
+    <div class="station-list center">
+    	{%  if 'stop_id' in station: %}
         <p><span class="name"><a href="/traintime/{{station.stop_id}}"> {{station.name}} {{station.direction}} Stop {{station.stop_id}}</a></p>
+    	{% endif %}
     </div>
 {% endfor %}	
+{%  endif %}
 </div>
 {% endblock %}

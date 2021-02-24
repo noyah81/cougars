@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Registration:</h1>
+{# condition below shows form only if you add ?password=reg_new_user at the end of the url #}
+{% if page_pass == 'reg_new_user' %}
+<form method="POST">
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+    {{ form.email.label }} {{ form.email() }}<br>
+    {{ form.username.label }} {{ form.username() }}<br>
+    {{ form.password.label }} {{ form.password() }}<br>
+    {{ form.pass_confirm.label }} {{ form.pass_confirm() }}<br>
+    {{ form.submit() }}
+</form>
+{% else %}
+	<p>You are not allowed to register a new user.</p>
+{% endif %}
+{% endblock %}

@@ -1,34 +1,22 @@
-<!DOCTYPE html>
 {% extends "base.html" %}
 {% block title %}
 Welcome to the Cougars Travel Website!
 {% endblock %}
 {% block content %}
-<body style="background-color:#FCF3DE;">
-<!-- title-->
+<body>
 <h1 style="text-align:center;"> New York Attractions </h1>
 <!-- images on home page--array of 6 photos-->
 <div class="main-banner">
-    <div class="image-container liberty-statue">
-        <img src="{{url_for('static', filename='images/NewYork-StatueOfLiberty.jpg')}}">
-    </div>
-    <div class="image-container empire">
-        <img src="{{url_for('static', filename='images/NewYork-EmpireState.jpg')}}">
-    </div>
-    <div class="image-container madison">
-        <img src="{{url_for('static', filename='images/NewYork-MadisonSquareGarden.jpg')}}">
-    </div>
-    <div class="image-container liberty-park">
-        <img src="{{url_for('static', filename='images/NewYork-LibertyPark.jpg')}}">
-    </div>
-    <div class="image-container museum">
-        <img src="{{url_for('static', filename='images/NewYork-MuseumOfArt.jpg')}}">
-    </div>
-    <div class="image-container times-square">    
-        <img src="{{url_for('static', filename='images/NewYork-TimesSquare.jpg')}}">
-    </div>
+    <!-- for loop goes here -->
+    {% for location in locations %}
+    <a href="/location/{{location[1]}}"> 
+       <div class="image-container">
+            <img src="{{url_for('static', filename='images/')}}{{location[2]}}" alt="{{location[0]}}">
+        </div>
+    </a>  
+    {% endfor %}
+    <!-- ends here -->
 </div>
-<!--CRUD code for comments--name, location, comments-->
 <h2> Enter Your Comments</h2>
 <div class="enter-comments">
     <form action="#comments" method="post">
@@ -46,7 +34,10 @@ Welcome to the Cougars Travel Website!
             <option value="Madison Square Garden">Madison Square Garden</option>
             <option value="WTC Liberty Park">WTC Liberty Park</option>
             <option value="Museum Of Art">Museum Of Art</option>
-            <option value="Times Square">Times Square</option>            
+            <option value="Times Square">Times Square</option>
+            <!-- any other locations added must be added here as well.
+            make sure any naming conventions are met here and in the database. 
+            -->            
         </select>
         </div>
         <div class="lower">
@@ -76,7 +67,6 @@ Welcome to the Cougars Travel Website!
 </footer>
 <script>
     //fixes the double post upon refresh. 
-
 if ( window.history.replaceState ) {
     console.log('history replaceState...')
   window.history.replaceState( null, null, window.location.href );

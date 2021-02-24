@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}All Locations{% endblock %}
+{% block content %}
+<body class="{{body_class}}">
+<!-- title-->
+<h1 style="text-align:center;"> New York Attractions </h1>
+<!-- images on home page--array of 6 photos-->
+<div class="main-banner">
+	<!-- for loop goes here -->
+	{% for location in locations %}
+	<a href="/location/{{location[1]}}"> 
+	   <div class="image-container">
+	        <img src="{{url_for('static', filename='images/')}}{{location[2]}}" alt="{{location[0]}}">
+	    </div>
+	</a>  
+	{% endfor %}
+    <!-- ends here -->
+</div>
+
+{% endblock %}
+
+
