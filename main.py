@@ -143,6 +143,10 @@ def iam():
 def ticket1():
     return render_template("ticket1.html")
 
+@app.route("/crossovernotes")
+def crossovernotes():
+    return render_template("crossovernotes.html")
+
 @app.route("/location")
 @app.route("/location/<string:url>")
 def location(url=''): 
