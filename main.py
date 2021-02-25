@@ -147,6 +147,14 @@ def ticket1():
 def crossovernotes():
     return render_template("crossovernotes.html")
 
+@app.route("/apreqs")
+def apreqs():
+    return render_template("apreqs.html")
+
+@app.route("/calvinjournal")
+def calvinjournal():
+    return render_template("calvinjournal.html")
+
 @app.route("/location")
 @app.route("/location/<string:url>")
 def location(url=''): 
