@@ -394,6 +394,23 @@ def location(url=''):
 def dashboard():
     return render_template('dashboard.html')
 
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
+
+@app.route("/crossovernotes")
+def crossovernotes():
+    return render_template("crossovernotes.html")
+
+@app.route("/apreqs")
+def apreqs():
+    return render_template("apreqs.html")
+
+@app.route("/calvinjournal")
+def calvinjournal():
+    return render_template("calvinjournal.html")
+
 # RUNv
 if __name__ == "__main__":
     app.run(debug=True, host='127.0.0.1', port='5000')
