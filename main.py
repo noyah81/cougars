@@ -265,33 +265,6 @@ def home():
     conn.close()
     return render_template("home.html", items=items, locations=locations)
 
-'''
-these routes can be eliminated in favor of the new locations routes, since they are in the database in the locations table:
-
-@app.route("/madisonsquare")
-def madisonsquare():
-    return render_template("madisonsquare.html")
-
-@app.route("/liberty")
-def liberty():
-    return render_template("liberty.html")
-
-@app.route("/museum")
-def museum():
-    return render_template("museum.html")
-
-@app.route("/statue")
-def statue():
-    return render_template("statue.html")
-
-@app.route("/empire")
-def empire():
-    return render_template("empire.html")
-@app.route("/time")
-def time():
-    return render_template("time.html")
-'''
-
 @app.route("/central")
 def central():
     return render_template("central.html")
@@ -397,7 +370,7 @@ def dashboard():
 @app.errorhandler(404)
 def page_not_found(e):
     # note that we set the 404 status explicitly
-    return render_template('404.html'), 404
+    return render_template('404.html', body_class = 'page_404' ), 404
 
 @app.route("/crossovernotes")
 def crossovernotes():

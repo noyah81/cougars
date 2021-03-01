@@ -88,6 +88,10 @@ h1, h2, h3{
 	padding: .5em
 }
 
+h1 + h2{
+	border: none;
+}
+
 .reviews{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -114,6 +118,45 @@ h1, h2, h3{
 .review span.name{
 	font-weight: bold;
 }
+
+/*======================
+    404 page
+=======================*/
+
+
+.page_404{ 
+	background:#fff; 
+	}
+
+.page_404 h1{
+	border: none;
+}
+
+
+/*.page_404  img{ width:100%;}
+*/
+.four_zero_four_bg{
+
+ background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    height: 400px;
+    background-position: center;
+ }
+
+
+ .four_zero_four_bg h1{
+ font-size:80px;
+ }
+
+  .four_zero_four_bg h3{
+			 font-size:80px;
+			 }
+
+	.link_404{
+    padding: 10px 20px;
+    margin: 20px 0;
+	}
+
+
 @media only screen and (min-width: 480px) {
 	.main-banner{
 		grid-template-columns: 1fr 1fr;
