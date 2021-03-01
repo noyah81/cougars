@@ -5,8 +5,8 @@
 <div class="center">
 <img src="{{url_for('static', filename='images/')}}{{image}}">
 {{body | safe}}
-<p style="text-align:center;">
-<a class="btn btn-primary" href="{{gmapLink}}" role="button" target="_blank" title="opens in a new tab">Take me there!</a>
+<p class="center">
+<a class="btn btn-gmap" href="{{gmapLink}}" role="button" target="_blank" title="opens in a new tab">Take me there!</a>
 </p>
 </div>
 <h3>Comments on {{title}}</h3>

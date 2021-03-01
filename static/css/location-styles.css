@@ -13,13 +13,30 @@ body{
 	}
 
 nav.navbar{
-	background-color: #ffc107;
+	background-color:#9C633B;
+}
+
+a{
+	color: #ADA292;
+}
+
+a:hover {
+    color: #2D2B22;
+    text-decoration: underline;
 }
 
 a.nav-link {
-    color: #007bff;
+    color: #E2D6BC;
 }
 
+a.nav-link:hover {
+    color: #ADA292;
+}
+
+a.navbar-brand, .navbar-brand:focus, .navbar-brand:hover  {
+    text-decoration: none;
+    color: #E2D6BC;
+}
 
 form{
 	width: 90%;
@@ -54,13 +71,23 @@ textarea{
 }
 
 input[type="submit"] {
-    background-color: rgb(66 165 245);
+    background-color: #D0610E;
     color: white;
-    border: solid 1px rgb(66 165 245);
+    border: solid 1px #2D2B22;
     width: 94%;
     margin: .5em auto;
 }
 
+.btn-gmap {
+    color: #fff;
+    background-color: #D0610E;;
+    border-color: #2D2B22;
+}
+
+
+.image-container {
+    border: 1px solid #9C633B;
+}
 
 .main-banner{
 	display: grid;
@@ -83,9 +110,10 @@ input[type="submit"] {
 
 h1, h2, h3{
 	text-align: center;
-	border-top: 1px solid deepskyblue;
-	border-bottom: 1px solid deepskyblue;
-	padding: .5em
+	border-top: 1px solid #9C633B;
+	border-bottom: 1px solid #9C633B;
+	padding: .5em;
+	color: #9C633B;
 }
 
 h1 + h2{
@@ -106,7 +134,7 @@ h1 + h2{
 }
 
 .review{
-	border-left: solid deepskyblue 5px;
+	border-left: solid #ADA292 5px;
     padding: 0 .4em 0;
 
 }
