@@ -15,8 +15,9 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../.." />
-    <orderEntry type="jdk" jdkName="Python 3.8 (introduction)" jdkType="Python SDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Python 3.7 (untitled) interpreter library" level="application" />
+    <orderEntry type="library" exported="" name="Python 3.7 (untitled) interpreter library" level="application" />
+    <orderEntry type="module" module-name="gunicorn" exported="" />
   </component>
 </module>
