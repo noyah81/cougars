@@ -99,10 +99,15 @@ class Location(db.Model):
     gmap_link = db.Column(db.Text, unique=True, nullable=False)
     stations = db.Column(db.Text, unique=False, nullable=False) #should be csv of stations, no spaces between.
 
-    def __init__(self, name, location, comments):
-        self.name = name
-        self.location = location
-        self.comments = comments
+    def __init__(self, title, url, image, body, gmap_link, stations):
+        #these must match the columns in the db
+        self.title = title
+        self.url = url
+        self.image = image
+        self.body = body 
+        self.gmap_link = gmap_link
+        self.stations = stations
+
     #repr is a representation of the object.
     def __repr__(self):
         #f"..." is string formatting.
@@ -410,6 +415,33 @@ def delete_location(id = ''):
         db.session.commit()
 
     return redirect(url_for('dashboard'))
+
+@app.route('/add_location', methods=['GET', 'POST'])
+@login_required
+def add_location():
+
+    if request.method == 'POST':
+        print('add')
+        title = request.form['title']
+        url = request.form['url']
+        image = request.form['image']
+        body = request.form['body']
+        gmap_link = request.form['gmap']
+        stations = request.form['station_list']
+        # print(title)
+        # print(url)
+        # print(image)
+        # print(body)
+        # print(gmap_link)
+        # print(stations)
+        #add location code goes here.
+        location = Location(title=title,url=url, image=image, body=body, gmap_link=gmap_link, stations = stations)
+        db.session.add(location)
+        db.session.commit()
+        return redirect(url_for('dashboard'))
+
+    return render_template('add_location.html', body_class='add-location')
+
 
 
 

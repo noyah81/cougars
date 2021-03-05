@@ -54,6 +54,7 @@
               <a class="nav-link dropdown-toggle" href="/location" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi {{ current_user.username }}!</a>
               <div class="dropdown-menu" aria-labelledby="dropdown">
                 <a class="dropdown-item" href="{{ url_for('dashboard') }}">Dashboard</a>
+                <a class="dropdown-item" href="{{ url_for('add_location') }}">Add Location</a>
                 <a class="dropdown-item" href="{{ url_for('logout') }}">Log Out</a>
                 <a class="dropdown-item" href="/register?password=reg_new_user">Register New User</a>
               </div>

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1>{{ current_user.username }}'s Dashboard</h1>
+<h2>Locations:</h2>
+<style type="text/css">
+	/*temp desktop styles*/
+
+	.dashboard section{
+		padding: 0 .5em 1em;
+		border-bottom: 1px solid grey;
+	}
+
+	.dashboard input[type="submit"]{
+		margin-left: auto;
+	}
+
+	.dashboard tr{
+		text-align: center;
+	}
+
+	.dashboard section img{
+		width: 100%;
+	}
+
+	.dashboard form.delete{
+		width: initial;
+		margin: initial;
+	}
+
+	.dashboard form{
+		margin: 0 auto	1rem;
+	}
+
+</style>
+
+  		<form method="POST" action="">
+  		<section>	
+		<label for="loc_name">Location Name:</label>
+		<p class="instruction">This should be written in plain english, no HTML tags and properly capitalized.</p>
+		<input required type="text" name="title" id="loc_name" placeholder="Name of Location">
+		</section>
+  		<section>	
+		<label for="loc_url">Location's URL:</label>
+		<p class="instruction">This is the string which gets the entry for the location from the database. It should be written in all lowercase with dashes between words. (example: times-square)</p>
+		<input required type="text" name="url" id="loc_url" placeholder="name-of-location">
+		</section>
+		<section>
+		<label for="loc_image" class="img-label">Current Image:</label>	
+		<p class="instruction">The image location is in the static/images/ folder. Put the new image in the proper folder and reference it by its file name in the input below. You will see the image once this has been submitted.It should be 800x600 pixels or 4:3 aspect ratio that is at least that big.</p>
+		<input required id="loc_image" type="text" name="image" placeholder="name-of-location.jpg" required>
+		</section>
+		<section>
+		<label for="loc_body">Current Content:</label>
+		<textarea required id="loc_body" name="body" placeholder="<p>Some descriptive text.</p>"></textarea>
+		<p class="instruction">Add HTML tags here for formatting. At minimum this should start with a paragraph tag and end with an end paragraph tag.</p>
+		<!-- TODO: Limit acceptable tags or add a text editor helper or both -->
+		</section>
+		<section>
+		<label for="gmap_url">GMap Link URL</label>
+		<p>Get a link from google maps and insert it here.</p>
+		<input required type="url" name="gmap" placeholder="google map link">
+		</section>
+		<section>
+		<label for="loc_stations">Stations</label>
+		<p class="instruction">For a list of stations, create a list of comma separated values here. There should be no spaces between the commas. For a message instead, make sure there are no commas.</p>
+		<!-- since there are no [ ] around here, we might have to add the brackets with HTML entities... or make the value a list when updating the data -->
+		<input required type="text" id="loc_stations" name="station_list" required placeholder="text or a list of station ids.">
+		</section>
+		<input type="submit" value="Add" name="submit">
+		</form>
+
+
+
+{% endblock %}
