@@ -194,6 +194,8 @@ def stations():
 @app.route('/traintime/')
 @app.route('/traintime/<string:id>', methods=['GET', 'POST'])
 def traintime(id=''):
+    back = request.referrer #gets previous page
+
     if id!='': 
         station = id
         url = 'http://mtaapi.herokuapp.com/api?id=' + station
@@ -239,7 +241,7 @@ def traintime(id=''):
                     counter += 1
 
         name = resp.json()['result']['name']
-        return render_template('traintime.html', times=display_times, name=name, current_time=display_time)
+        return render_template('traintime.html', times=display_times, name=name, current_time=display_time, back=back)
     else:
         return render_template('no_station.html')
 
