@@ -42,18 +42,18 @@
   		<section>	
 		<label for="loc_name">Location Name:</label>
 		<p class="instruction">This should be written in plain english, no HTML tags and properly capitalized.</p>
-		<input type="text" name="title" id="loc_name" value="{{location.title}}">
+		<input required type="text" name="title" id="loc_name" value="{{location.title}}">
 		</section>
   		<section>	
 		<label for="loc_url">Location's URL:</label>
 		<p class="instruction">This is the string which gets the entry for the location from the database. It should be written in all lowercase with dashes between words. (example: times-square)</p>
-		<input type="text" name="url" id="loc_url" value="{{location.url}}">
+		<input required type="text" name="url" id="loc_url" value="{{location.url}}">
 		</section>
 		<section>
 		<label for="loc_image" class="img-label">Current Image:</label>	
 		<p class="instruction">The image location is in the static/images/ folder. Put the new image in the proper folder and reference it by its file name in the input below. You will see the new image once this has been submitted.</p>
 		<img src="{{url_for('static', filename='images/')}}{{location.image}}">
-		<input id="loc_image" type="text" name="image" value="{{location.image}}" required>
+		<input required id="loc_image" type="text" name="image" value="{{location.image}}" required>
 		</section>
 		<section>
 		<label for="loc_body">Current Content:</label>
@@ -64,13 +64,13 @@
 		<section>
 		<label for="gmap_url">GMap Link URL</label>
 		<p>Get the link from google maps and insert it here.</p>
-		<input type="url" name="gmap" value="{{location.gmap_link}}">
+		<input required type="url" name="gmap" value="{{location.gmap_link}}">
 		</section>
 		<section>
 		<label for="loc_stations">Stations</label>
 		<p class="instruction">For a list of stations, create a list of comma separated values here. There should be no spaces between the commas. For a message instead, make sure there are no commas.</p>
 		<!-- since there are no [ ] around here, we might have to add the brackets with HTML entities... or make the value a list when updating the data -->
-		<input type="text" id="loc_stations" name="station_list" required value="{{location.stations}}">
+		<input required type="text" id="loc_stations" name="station_list" required value="{{location.stations}}">
 		<input type="hidden" name="id" value="{{location.id}}">
 		</section>
 		<input type="submit" value="Edit" name="submit">

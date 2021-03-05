@@ -190,54 +190,58 @@ def stations():
 
     return render_template('stations.html', stations=stations)
 
-
+@app.route('/traintime')
+@app.route('/traintime/')
 @app.route('/traintime/<string:id>', methods=['GET', 'POST'])
-def traintime(id):
-    station = id
-    url = 'http://mtaapi.herokuapp.com/api?id=' + station
-    resp = requests.get(url)
-    times = resp.json()['result']['arrivals']
-    times.sort()
-    unique_times = [] #comparison list.
-    display_times = []#display list.
-    now = datetime.now()
-    #$ is a typo. % instead gives us the right values.
-    current_time = now.strftime("%H:%M%S")
-    display_time = now.strftime("%I:%M %p")
-    counter = 0
+def traintime(id=''):
+    if id!='': 
+        station = id
+        url = 'http://mtaapi.herokuapp.com/api?id=' + station
+        resp = requests.get(url)
+        times = resp.json()['result']['arrivals']
+        times.sort()
+        unique_times = [] #comparison list.
+        display_times = []#display list.
+        now = datetime.now()
+        #$ is a typo. % instead gives us the right values.
+        current_time = now.strftime("%H:%M%S")
+        display_time = now.strftime("%I:%M %p")
+        counter = 0
 
-    #updated formatting for times in list
-    for time in times:
-        #format of time is: 03:45:00
-        time = time[0:5] #this takes it down to hour and minute, no more seconds.
+        #updated formatting for times in list
+        for time in times:
+            #format of time is: 03:45:00
+            time = time[0:5] #this takes it down to hour and minute, no more seconds.
 
-        if time not in unique_times and not (time[0] + time[1] == '24'):
+            if time not in unique_times and not (time[0] + time[1] == '24'):
 
-            if time >= current_time and counter < 10:
-                unique_times.append(time) #keeps it so we can cleanly compare times
+                if time >= current_time and counter < 10:
+                    unique_times.append(time) #keeps it so we can cleanly compare times
 
-                #let's separate hours from minutes to compare for am/pm
-                time = time.split(':')
-                h = time[0]
-                m = time[1]
-                merideim = 'AM'
+                    #let's separate hours from minutes to compare for am/pm
+                    time = time.split(':')
+                    h = time[0]
+                    m = time[1]
+                    merideim = 'AM'
 
-                if int(h) > 11: #casts as int so we can compare numbers easily
-                    merideim = 'PM'
-                    h = int(h)-12 #lets us subtract numbers easily
+                    if int(h) > 11: #casts as int so we can compare numbers easily
+                        merideim = 'PM'
+                        h = int(h)-12 #lets us subtract numbers easily
 
-                if h == 0:
-                    h = 12
+                    if h == 0:
+                        h = 12
 
-                if h < 10:
-                    h = f"0{h}" #keeps double integer for time display consistantcy.
+                    if h < 10:
+                        h = f"0{h}" #keeps double integer for time display consistantcy.
 
-                ftime = f"{h}:{m} {merideim}"
-                display_times.append(ftime)
-                counter += 1
+                    ftime = f"{h}:{m} {merideim}"
+                    display_times.append(ftime)
+                    counter += 1
 
-    name = resp.json()['result']['name']
-    return render_template('traintime.html', times=display_times, name=name, current_time=display_time)
+        name = resp.json()['result']['name']
+        return render_template('traintime.html', times=display_times, name=name, current_time=display_time)
+    else:
+        return render_template('no_station.html')
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -368,7 +372,7 @@ def dashboard():
     locations = Location.query.all();
 
     if request.method == 'POST':
-        #print('post')
+        
         id = request.form['id']
         title = request.form['title']
         url = request.form['url']
@@ -376,22 +380,16 @@ def dashboard():
         body = request.form['body']
         gmap_link = request.form['gmap']
         stations = request.form['station_list']
-        print(id)
-        print(title)
-        print(url)
-        print(image)
-        print(body)
-        print(gmap_link)
-        print(stations)
 
-        update = Location.query.filter_by(id=id).first()
+        update = Location.query.filter_by(id=id).first() #finds the row to update
+        #updates each item.
         update.title = title
         update.url = url
         update.image = image
         update.body = body
         update.gmap_link = gmap_link
         update.stations = stations
-        db.session.commit()
+        db.session.commit() #sets the update to the db. No backsies.
 
     return render_template('dashboard.html', locations=locations, body_class='dashboard')
 
