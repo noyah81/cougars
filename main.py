@@ -50,7 +50,6 @@ def load_user(user_id):
     return User.query.get(user_id)
 
 class User(db.Model, UserMixin):
-
     # Create a table in the db
     __tablename__ = 'users'
 
@@ -107,7 +106,7 @@ class Location(db.Model):
     #repr is a representation of the object.
     def __repr__(self):
         #f"..." is string formatting.
-        return f"location: {self.title, self.location, self.url, self.image, self.body, self.gmap_link, self.stations}"
+        return f"location: {self.title, self.url, self.image, self.body, self.gmap_link, self.stations, self.id}"
 
 
 db.create_all();
@@ -202,7 +201,7 @@ def traintime(id):
     unique_times = [] #comparison list.
     display_times = []#display list.
     now = datetime.now()
-    #$ is a typo. % instead gives us the right values -- let's not include the seconds.
+    #$ is a typo. % instead gives us the right values.
     current_time = now.strftime("%H:%M%S")
     display_time = now.strftime("%I:%M %p")
     counter = 0
@@ -362,10 +361,57 @@ def location(url=''):
     return render_template("location.html", url=url, title=title, image=image, body=body, gmapLink=gmapLink, stations=stations, body_class='location', items=items, isText=isText)
 
 
-@app.route('/dashboard')
+@app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
-    return render_template('dashboard.html')
+    #get all the locations, and pass them to the pages as a dictionary called locations.
+    locations = Location.query.all();
+
+    if request.method == 'POST':
+        #print('post')
+        id = request.form['id']
+        title = request.form['title']
+        url = request.form['url']
+        image = request.form['image']
+        body = request.form['body']
+        gmap_link = request.form['gmap']
+        stations = request.form['station_list']
+        print(id)
+        print(title)
+        print(url)
+        print(image)
+        print(body)
+        print(gmap_link)
+        print(stations)
+
+        update = Location.query.filter_by(id=id).first()
+        update.title = title
+        update.url = url
+        update.image = image
+        update.body = body
+        update.gmap_link = gmap_link
+        update.stations = stations
+        db.session.commit()
+
+    return render_template('dashboard.html', locations=locations, body_class='dashboard')
+
+@app.route('/delete_location')
+@app.route('/delete_location/<string:id>', methods=['GET','POST'])
+@login_required
+def delete_location(id = ''):
+
+    if id == '':
+        return render_template('delete.html', msg = 'You did not supply a location id to delete. Go back to the <a href="/dashboard">Dashboard</a>')
+ 
+    if request.method == 'POST':
+        id = id
+        location = Location.query.get(id)
+        db.session.delete(location)
+        db.session.commit()
+
+    return redirect(url_for('dashboard'))
+
+
 
 @app.errorhandler(404)
 def page_not_found(e):

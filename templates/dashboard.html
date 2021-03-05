@@ -1,7 +1,121 @@
 {% extends "base.html" %}
 {% block title %}Dashboard{% endblock %}
 {% block content %}
-<p>This is where the dashboard will go.</p>
+<h1>{{ current_user.username }}'s Dashboard</h1>
+<h2>Locations:</h2>
+<style type="text/css">
+	/*temp desktop styles*/
+
+	.dashboard section{
+		padding: 0 .5em 1em;
+		border-bottom: 1px solid grey;
+	}
+
+	.dashboard input[type="submit"]{
+		margin-left: auto;
+	}
+
+	.dashboard tr{
+		text-align: center;
+	}
+
+	.dashboard section img{
+		width: 100%;
+	}
+
+	.dashboard form.delete{
+		width: initial;
+		margin: initial;
+	}
+
+	.dashboard form{
+		margin: 0 auto	1rem;
+	}
+
+</style>
+  <table class="table">
+  	{% for location in locations %}
+  	<tr>
+  		<td><a class="btn btn-success" href="/location/{{location.url}}" role="button" target="_blank" title="opens in a new tab">View</a></td>
+  		<td>
+  		<form method="POST" id="{{location.id}}" action="#{{location.id}}">
+  		<section>	
+		<label for="loc_name">Location Name:</label>
+		<p class="instruction">This should be written in plain english, no HTML tags and properly capitalized.</p>
+		<input type="text" name="title" id="loc_name" value="{{location.title}}">
+		</section>
+  		<section>	
+		<label for="loc_url">Location's URL:</label>
+		<p class="instruction">This is the string which gets the entry for the location from the database. It should be written in all lowercase with dashes between words. (example: times-square)</p>
+		<input type="text" name="url" id="loc_url" value="{{location.url}}">
+		</section>
+		<section>
+		<label for="loc_image" class="img-label">Current Image:</label>	
+		<p class="instruction">The image location is in the static/images/ folder. Put the new image in the proper folder and reference it by its file name in the input below. You will see the new image once this has been submitted.</p>
+		<img src="{{url_for('static', filename='images/')}}{{location.image}}">
+		<input id="loc_image" type="text" name="image" value="{{location.image}}" required>
+		</section>
+		<section>
+		<label for="loc_body">Current Content:</label>
+		<textarea required id="loc_body" name="body">{{location.body}}</textarea>
+		<p class="instruction">Add HTML tags here for formatting. At minimum this should start with a paragraph tag and end with an end paragraph tag.</p>
+		<!-- TODO: Limit acceptable tags or add a text editor helper or both -->
+		</section>
+		<section>
+		<label for="gmap_url">GMap Link URL</label>
+		<p>Get the link from google maps and insert it here.</p>
+		<input type="url" name="gmap" value="{{location.gmap_link}}">
+		</section>
+		<section>
+		<label for="loc_stations">Stations</label>
+		<p class="instruction">For a list of stations, create a list of comma separated values here. There should be no spaces between the commas. For a message instead, make sure there are no commas.</p>
+		<!-- since there are no [ ] around here, we might have to add the brackets with HTML entities... or make the value a list when updating the data -->
+		<input type="text" id="loc_stations" name="station_list" required value="{{location.stations}}">
+		<input type="hidden" name="id" value="{{location.id}}">
+		</section>
+		<input type="submit" value="Edit" name="submit">
+		</form>	
+  		</td>
+  		<td>
+  		<td>
+  			<form  action="{{url_for('delete_location', id=location.id )}}" method="post" class="delete">
+        		<input type="hidden" name="_method" value="DELETE">
+        		<button type="submit" class="btn btn-danger" title="deletes this entry">Delete</button>
+  			</form>
+      </td>  		
+  	</tr>
+  	{% endfor %}
+
+  </table>
+  <script type="text/javascript" defer>
+  	//using vanilla JS for document ready to make sure.
+  	document.addEventListener("DOMContentLoaded", function(){
+  		let deleteForms = document.querySelectorAll(".delete");
+    	for (var i = 0; i < deleteForms.length; i++) {
+        deleteForms[i].addEventListener("submit", function (e) {
+        	e.preventDefault();
+			var deleteMe = confirm('Are you sure you want to delete this entry? Press ok to continue.');
+			if (deleteMe == true){
+				alert('this item will be deleted!')
+				//submit the data
+				//console.log(this)
+				this.submit()
+			}else{
+				alert('this item will not be deleted!')
+				//do not submit the data
+				
+			}
+
+        });
+    }
 
 
+
+
+  	})
+
+
+
+
+  </script>
 {% endblock %}
