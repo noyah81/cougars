@@ -1,4 +1,8 @@
 # Welcome to the P5Cougars Repository
+# Website Guide
+Our website is a New York attractions website for tourists who need transportation information and details on where they might want to go.
+
+Our website starts off with the home page displaying 6 key New York locations. Under the array of photos there is an input location for comments. In the comments input section there is a field for the user's name, a dropdown with a selection of locations, and a large text box for comments. Under the input section, there is a section where the comments are recorded. At the very top, the navigation bar has sections linked to each location information page. Each location page has a picture of the attraction and a button linked to the directions. The comments from the home page are sorted onto each attraction page. Each attraction page only has the comments inputted for that single, specific location from the home page wheras the home page has all comments. Under the comments on the attraction page, there is a list of subway stations that are around that specified location. If the user types in "/stations" in the search bar, a list of subway stations pops up with all New York stations used with the website.  
  
 ### Groups Table
 
